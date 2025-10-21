@@ -37,7 +37,7 @@ function App() {
     <>
       <Header />
       <div className="w-full h-200">
-        <GridMotion items={items} />
+        
       </div>
     </>
   );
