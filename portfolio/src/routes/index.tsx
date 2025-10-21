@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import GridMotion from "@/components/GridMotion";
+import Header from "@/components/Header";
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -34,8 +35,10 @@ function App() {
   ];
   return (
     <>
-      <GridMotion items={items} />
-      <div className="text-center"></div>
+      <Header />
+      <div className="w-full h-200">
+        <GridMotion items={items} />
+      </div>
     </>
   );
 }
