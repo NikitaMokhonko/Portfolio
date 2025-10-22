@@ -28,7 +28,7 @@ function App() {
           </h3>
         </div>
         <div>
-          <img src="profile.jpg" alt="Profile Picture" className="m-20" />
+          <img src="profile.jpg" alt="Profile Picture" className="m-20 h-100 w-100 border" />
         </div>
       </div>
       <Ribbons
