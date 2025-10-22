@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Ribbons from "@/components/Ribbon";
 import RotatingText from "@/components/RotatingText";
+import { useNavigate } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
   component: App,
 });
 
 function App() {
+  const navigate = useNavigate();
   return (
     <div className="w-full cursor-default">
       <div className="w-full flex justify-between">
@@ -51,8 +53,16 @@ function App() {
       </div>
       <div className="mt-30">
         <div className="flex justify-between sm:px-10">
-          <h1 className="text-4xl">Projects</h1>
-          <button className="cursor-pointer">View all</button>
+          <h1 className="text-3xl">Projects</h1>
+          <button
+            onClick={() => navigate({ to: "/projects" })}
+            className="group flex flex-col items-start cursor-pointer bg-transparent border-0 p-0"
+            aria-label="Projects"
+            type="button"
+          >
+            <span className="pointer-events-none">View All</span>
+            <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
+          </button>
         </div>
       </div>
       <Ribbons
