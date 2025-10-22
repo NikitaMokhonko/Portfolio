@@ -9,8 +9,13 @@ export const Route = createFileRoute("/")({
 function App() {
   return (
     <div className="w-full h-screen">
-      <Header />
-      <div className="w-full h-200">
+      <div className="relative z-20">
+        <Header />
+      </div>
+      <div className="w-full h-full">
+        <div className="sm:pt-30 sm:pl-10">
+          <h1 className="text-5xl">Turning Your Imagination Into Reality</h1>
+        </div>
         <Ribbons
           baseThickness={10}
           colors={["#000000"]}

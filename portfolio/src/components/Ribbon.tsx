@@ -33,8 +33,19 @@ const Ribbons: React.FC<RibbonsProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    // create a full-viewport host appended to document.body so the canvas
+    // isn't constrained by parent stacking contexts
+    const host = document.createElement("div");
+    host.style.position = "fixed";
+    host.style.inset = "0";
+    host.style.top = "0";
+    host.style.left = "0";
+    host.style.width = "100vw";
+    host.style.height = "100vh";
+    host.style.pointerEvents = "none"; // allow clicks through the overlay
+    host.style.zIndex = "-1"; // place ribbon behind normal page content
+    document.body.appendChild(host);
+    const container = host;
 
     const renderer = new Renderer({
       dpr: window.devicePixelRatio || 2,
@@ -52,11 +63,13 @@ const Ribbons: React.FC<RibbonsProps> = ({
       gl.clearColor(0, 0, 0, 0);
     }
 
+    // make the canvas fill the host
     gl.canvas.style.position = "absolute";
-    gl.canvas.style.top = "0";
-    gl.canvas.style.left = "0";
+    gl.canvas.style.inset = "0";
     gl.canvas.style.width = "100%";
     gl.canvas.style.height = "100%";
+    // keep pointer-events off so page interactions still work
+    gl.canvas.style.pointerEvents = "none";
     container.appendChild(gl.canvas);
 
     const scene = new Transform();
@@ -130,9 +143,9 @@ const Ribbons: React.FC<RibbonsProps> = ({
     `;
 
     function resize() {
-      if (!container) return;
-      const width = container.clientWidth;
-      const height = container.clientHeight;
+      // full-viewport sizing
+      const width = window.innerWidth;
+      const height = window.innerHeight;
       renderer.setSize(width, height);
       lines.forEach((line) => line.polyline.resize());
     }
@@ -185,28 +198,29 @@ const Ribbons: React.FC<RibbonsProps> = ({
 
     resize();
 
+    // host has pointer-events: none, so listen on window to track mouse/touch
     const mouse = new Vec3();
     function updateMouse(e: MouseEvent | TouchEvent) {
-      let x: number, y: number;
-      if (!container) return;
-      const rect = container.getBoundingClientRect();
-      if ("changedTouches" in e && e.changedTouches.length) {
-        x = e.changedTouches[0].clientX - rect.left;
-        y = e.changedTouches[0].clientY - rect.top;
-      } else if (e instanceof MouseEvent) {
-        x = e.clientX - rect.left;
-        y = e.clientY - rect.top;
-      } else {
-        x = 0;
+      let x = 0,
         y = 0;
+      const rect = {
+        left: 0,
+        top: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+      if ("changedTouches" in e && e.changedTouches.length) {
+        x = e.changedTouches[0].clientX;
+        y = e.changedTouches[0].clientY;
+      } else if (e instanceof MouseEvent) {
+        x = e.clientX;
+        y = e.clientY;
       }
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-      mouse.set((x / width) * 2 - 1, (y / height) * -2 + 1, 0);
+      mouse.set((x / rect.width) * 2 - 1, (y / rect.height) * -2 + 1, 0);
     }
-    container.addEventListener("mousemove", updateMouse);
-    container.addEventListener("touchstart", updateMouse);
-    container.addEventListener("touchmove", updateMouse);
+    window.addEventListener("mousemove", updateMouse);
+    window.addEventListener("touchstart", updateMouse);
+    window.addEventListener("touchmove", updateMouse);
 
     const tmp = new Vec3();
     let frameId: number;
@@ -247,12 +261,15 @@ const Ribbons: React.FC<RibbonsProps> = ({
 
     return () => {
       window.removeEventListener("resize", resize);
-      container.removeEventListener("mousemove", updateMouse);
-      container.removeEventListener("touchstart", updateMouse);
-      container.removeEventListener("touchmove", updateMouse);
+      window.removeEventListener("mousemove", updateMouse);
+      window.removeEventListener("touchstart", updateMouse);
+      window.removeEventListener("touchmove", updateMouse);
       cancelAnimationFrame(frameId);
       if (gl.canvas && gl.canvas.parentNode === container) {
         container.removeChild(gl.canvas);
+      }
+      if (host && host.parentNode === document.body) {
+        document.body.removeChild(host);
       }
     };
   }, [
@@ -270,6 +287,8 @@ const Ribbons: React.FC<RibbonsProps> = ({
     backgroundColor,
   ]);
 
+  // keep a ref so the component can be placed anywhere, but the canvas will
+  // actually be appended to document.body
   return <div ref={containerRef} className="relative w-full h-full" />;
 };
 
