@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Ribbons from "@/components/Ribbon";
+import RotatingText from "@/components/RotatingText";
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -10,7 +11,19 @@ function App() {
     <div className="w-full">
       <div className="w-full flex justify-between">
         <div className="sm:pt-30 sm:pl-10">
-          <h1 className="text-5xl">Turning Your Imagination Into Reality</h1>
+          <h1 className="text-5xl">
+            Turning Your Imagination Into <RotatingText
+              texts={["Reality", "Success", "A Business"]}
+              mainClassName=""
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              rotationInterval={5000}
+            />
+          </h1>
           <h2 className="pt-8 text-xl">
             Hi! I'm Nikita, a full stack developer with a passion for design.
           </h2>
@@ -28,7 +41,11 @@ function App() {
           </h3>
         </div>
         <div>
-          <img src="profile.jpg" alt="Profile Picture" className="m-20 h-100 w-100 border" />
+          <img
+            src="profile.jpg"
+            alt="Profile Picture"
+            className="m-20 h-100 w-100 border"
+          />
         </div>
       </div>
       <Ribbons
