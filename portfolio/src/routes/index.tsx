@@ -44,7 +44,7 @@ function App() {
           <img
             src="profile.jpg"
             alt="Profile Picture"
-            className="m-20 h-100 w-100 border"
+            className="mt-25 mr-10 h-100 w-100 border"
           />
         </div>
       </div>
