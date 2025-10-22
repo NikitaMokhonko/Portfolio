@@ -15,21 +15,32 @@ export default function Header() {
         <div className="flex flex-row pr-10 py-2 justify-center space-x-10 items-center text-xl">
           <button
             onClick={() => navigate({ to: "/about" })}
-            className="cursor-pointer"
+            className="group flex flex-col items-start cursor-pointer bg-transparent border-0 p-0"
+            aria-label="About"
+            type="button"
           >
-            About
+            <span className="pointer-events-none">About</span>
+            <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
+
           <button
             onClick={() => navigate({ to: "/projects" })}
-            className="cursor-pointer"
+            className="group flex flex-col items-start cursor-pointer bg-transparent border-0 p-0"
+            aria-label="Projects"
+            type="button"
           >
-            Projects
+            <span className="pointer-events-none">Projects</span>
+            <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
+
           <button
             onClick={() => navigate({ to: "/contact" })}
-            className="cursor-pointer"
+            className="group flex flex-col items-start cursor-pointer bg-transparent border-0 p-0"
+            aria-label="Contact"
+            type="button"
           >
-            Contact
+            <span className="pointer-events-none">Contact</span>
+            <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
         </div>
       </div>
