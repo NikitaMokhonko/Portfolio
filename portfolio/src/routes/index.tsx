@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
 
 function App() {
   return (
-    <div className="w-full">
+    <div className="w-full cursor-default">
       <div className="w-full flex justify-between">
         <div className="sm:pt-30 sm:pl-10">
           <h1 className="text-5xl">
