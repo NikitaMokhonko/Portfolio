@@ -12,7 +12,8 @@ function App() {
       <div className="w-full flex justify-between">
         <div className="sm:pt-30 sm:pl-10">
           <h1 className="text-5xl">
-            Turning Your Imagination Into <RotatingText
+            Turning Your Imagination Into{" "}
+            <RotatingText
               texts={["Reality", "Success", "A Business"]}
               mainClassName=""
               staggerFrom={"last"}
@@ -46,6 +47,12 @@ function App() {
             alt="Profile Picture"
             className="mt-25 mr-10 h-100 w-100 border"
           />
+        </div>
+      </div>
+      <div className="mt-30">
+        <div className="flex justify-between sm:px-10">
+          <h1 className="text-4xl">Projects</h1>
+          <button className="cursor-pointer">View all</button>
         </div>
       </div>
       <Ribbons
