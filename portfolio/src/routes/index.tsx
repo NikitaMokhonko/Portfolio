@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
 function App() {
   const navigate = useNavigate();
   return (
-    <div className="w-full cursor-default">
+    <div className="w-full min-h-screen cursor-default">
       <div className="w-full flex justify-between">
         <div className="sm:pt-30 sm:pl-10">
           <h1 className="text-5xl">
@@ -51,7 +51,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="mt-30">
+      <div className="mt-50">
         <div className="flex justify-between sm:px-10">
           <h1 className="text-3xl">Projects</h1>
           <button
@@ -63,6 +63,23 @@ function App() {
             <span className="pointer-events-none">View All</span>
             <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
+        </div>
+        <div className="mt-10 px-10 flex flex-row justify-between mb-20">
+          <img
+            src="Skinsmart-picture.png"
+            alt="Skinsmart"
+            className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+          />
+          <img
+            src="Novabank-picture.png"
+            alt="Novabank"
+            className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+          />
+          <img
+            src="Sweethouse-picture.png"
+            alt="Sweethouse"
+            className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+          />
         </div>
       </div>
       <Ribbons
