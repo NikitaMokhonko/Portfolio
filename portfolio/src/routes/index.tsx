@@ -65,24 +65,49 @@ function App() {
           </button>
         </div>
         <div className="mt-10 px-10 flex flex-row justify-between mb-20">
-          <img
-            src="Skinsmart-picture.png"
-            alt="Skinsmart"
-            className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+          <div
+            className="relative group cursor-pointer"
             onClick={() => navigate({ to: "/projects" })}
-          />
-          <img
-            src="Novabank-picture.png"
-            alt="Novabank"
-            className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+          >
+            <img
+              src="Skinsmart-picture.png"
+              alt="Skinsmart"
+              className="h-60 w-120 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+            />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+              <span className="text-white text-xl font-semibold">
+                Skinsmart
+              </span>
+            </div>
+          </div>
+          <div
+            className="relative group cursor-pointer"
             onClick={() => navigate({ to: "/projects" })}
-          />
-          <img
-            src="Sweethouse-picture.png"
-            alt="Sweethouse"
-            className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+          >
+            <img
+              src="Novabank-picture.png"
+              alt="Novabank"
+              className="h-60 w-120 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+            />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+              <span className="text-white text-xl font-semibold">Nova Bank</span>
+            </div>
+          </div>
+          <div
+            className="relative group cursor-pointer"
             onClick={() => navigate({ to: "/projects" })}
-          />
+          >
+            <img
+              src="Sweethouse-picture.png"
+              alt="Sweethouse"
+              className="h-60 w-120 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+            />
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+              <span className="text-black text-xl font-semibold">
+                Sweethouse
+              </span>
+            </div>
+          </div>
         </div>
       </div>
       <Ribbons
