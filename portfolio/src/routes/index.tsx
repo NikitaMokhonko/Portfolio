@@ -69,16 +69,19 @@ function App() {
             src="Skinsmart-picture.png"
             alt="Skinsmart"
             className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+            onClick={() => navigate({ to: "/projects" })}
           />
           <img
             src="Novabank-picture.png"
             alt="Novabank"
             className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+            onClick={() => navigate({ to: "/projects" })}
           />
           <img
             src="Sweethouse-picture.png"
             alt="Sweethouse"
             className="h-60 w-120 object-cover transition duration-500 ease-in-out filter hover:blur-sm cursor-pointer"
+            onClick={() => navigate({ to: "/projects" })}
           />
         </div>
       </div>
