@@ -64,7 +64,7 @@ function App() {
             <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
         </div>
-        <div className="mt-10 px-10 flex flex-row justify-between mb-20">
+        <div className="mt-14 px-10 flex flex-row justify-between mb-20">
           <div
             className="relative group cursor-pointer"
             onClick={() => navigate({ to: "/projects" })}
@@ -72,7 +72,7 @@ function App() {
             <img
               src="Skinsmart-picture.png"
               alt="Skinsmart"
-              className="h-60 w-120 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+              className="h-60 w-125 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
               <span className="text-white text-xl font-semibold">
@@ -87,7 +87,7 @@ function App() {
             <img
               src="Novabank-picture.png"
               alt="Novabank"
-              className="h-60 w-120 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+              className="h-60 w-125 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
               <span className="text-white text-xl font-semibold">Nova Bank</span>
@@ -100,7 +100,7 @@ function App() {
             <img
               src="Sweethouse-picture.png"
               alt="Sweethouse"
-              className="h-60 w-120 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+              className="h-60 w-125 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
               <span className="text-black text-xl font-semibold">
