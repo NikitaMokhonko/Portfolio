@@ -9,14 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SweethouseRouteImport } from './routes/sweethouse'
+import { Route as SkinsmartRouteImport } from './routes/skinsmart'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as NovabankRouteImport } from './routes/novabank'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SweethouseRoute = SweethouseRouteImport.update({
+  id: '/sweethouse',
+  path: '/sweethouse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkinsmartRoute = SkinsmartRouteImport.update({
+  id: '/skinsmart',
+  path: '/skinsmart',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovabankRoute = NovabankRouteImport.update({
+  id: '/novabank',
+  path: '/novabank',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -39,43 +57,98 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/novabank': typeof NovabankRoute
   '/projects': typeof ProjectsRoute
+  '/skinsmart': typeof SkinsmartRoute
+  '/sweethouse': typeof SweethouseRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/novabank': typeof NovabankRoute
   '/projects': typeof ProjectsRoute
+  '/skinsmart': typeof SkinsmartRoute
+  '/sweethouse': typeof SweethouseRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/novabank': typeof NovabankRoute
   '/projects': typeof ProjectsRoute
+  '/skinsmart': typeof SkinsmartRoute
+  '/sweethouse': typeof SweethouseRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/projects'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/novabank'
+    | '/projects'
+    | '/skinsmart'
+    | '/sweethouse'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/projects'
-  id: '__root__' | '/' | '/about' | '/contact' | '/projects'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/novabank'
+    | '/projects'
+    | '/skinsmart'
+    | '/sweethouse'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/novabank'
+    | '/projects'
+    | '/skinsmart'
+    | '/sweethouse'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  NovabankRoute: typeof NovabankRoute
   ProjectsRoute: typeof ProjectsRoute
+  SkinsmartRoute: typeof SkinsmartRoute
+  SweethouseRoute: typeof SweethouseRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sweethouse': {
+      id: '/sweethouse'
+      path: '/sweethouse'
+      fullPath: '/sweethouse'
+      preLoaderRoute: typeof SweethouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skinsmart': {
+      id: '/skinsmart'
+      path: '/skinsmart'
+      fullPath: '/skinsmart'
+      preLoaderRoute: typeof SkinsmartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects': {
       id: '/projects'
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novabank': {
+      id: '/novabank'
+      path: '/novabank'
+      fullPath: '/novabank'
+      preLoaderRoute: typeof NovabankRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -106,7 +179,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  NovabankRoute: NovabankRoute,
   ProjectsRoute: ProjectsRoute,
+  SkinsmartRoute: SkinsmartRoute,
+  SweethouseRoute: SweethouseRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

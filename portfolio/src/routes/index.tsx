@@ -67,7 +67,7 @@ function App() {
         <div className="mt-14 px-10 flex flex-row justify-between mb-20">
           <div
             className="relative group cursor-pointer"
-            onClick={() => navigate({ to: "/projects" })}
+            onClick={() => navigate({ to: "/skinsmart" })}
           >
             <img
               src="Skinsmart-picture.png"
@@ -82,7 +82,7 @@ function App() {
           </div>
           <div
             className="relative group cursor-pointer"
-            onClick={() => navigate({ to: "/projects" })}
+            onClick={() => navigate({ to: "/novabank" })}
           >
             <img
               src="Novabank-picture.png"
@@ -95,12 +95,12 @@ function App() {
           </div>
           <div
             className="relative group cursor-pointer"
-            onClick={() => navigate({ to: "/projects" })}
+            onClick={() => navigate({ to: "/sweethouse" })}
           >
             <img
               src="Sweethouse-picture.png"
               alt="Sweethouse"
-              className="h-60 w-125 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+              className="h-60 w-125 object-cov</div>er transition duration-500 ease-in-out filter group-hover:blur-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
               <span className="text-black text-xl font-semibold">
