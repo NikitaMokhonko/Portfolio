@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Ribbons from "@/components/Ribbon";
 import RotatingText from "@/components/RotatingText";
-import Marquee from "react-fast-marquee";
 import { useNavigate } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -112,14 +111,6 @@ function App() {
             </div>
           </div>
         </div>
-        <Marquee speed={30} autoFill={true} className="border-b py-1">
-          <img src="profile.jpg"></img>
-          <img src="profile.jpg"></img>
-          <img src="profile.jpg"></img>
-          <img src="profile.jpg"></img>
-          <img src="profile.jpg"></img>
-          <img src="profile.jpg"></img>
-        </Marquee>
       </div>
       <Ribbons
         baseThickness={10}
