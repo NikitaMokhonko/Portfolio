@@ -72,11 +72,19 @@ function App() {
             <img
               src="Skinsmart-picture.png"
               alt="Skinsmart"
-              className="h-60 w-125 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+              className="h-60 w-122 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-              <span className="text-white text-xl font-semibold">
-                Skinsmart
+              <span className="text-black text-center text-xl font-semibold mx-5">
+                SkinSmart
+                <br />
+                <span className="text-sm text-black font-normal bg-white">
+                  Responsive frontend website built for a CS2 business,
+                  designed to let users easily contact the company to sell their
+                  items. The site features a sleek, modern interface, clear
+                  presentation of contact options, and a layout
+                  optimized for quick navigation.
+                </span>
               </span>
             </div>
           </div>
@@ -87,11 +95,18 @@ function App() {
             <img
               src="Novabank-picture.png"
               alt="Novabank"
-              className="h-60 w-125 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
+              className="h-60 w-122 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-              <span className="text-white text-xl font-semibold">
+              <span className="text-white text-center text-xl font-semibold mx-5">
                 Nova Bank
+                <br />
+                <span className="text-sm text-white font-normal bg-black">
+                  Fully functioning mock banking application built in a team of
+                  11 people, with features such as log in, dashboard, transfers
+                  between accounts and users, transaction history with
+                  AI-powered search, loans and a fully robust admin page.
+                </span>
               </span>
             </div>
           </div>
@@ -102,11 +117,19 @@ function App() {
             <img
               src="Sweethouse-picture.png"
               alt="Sweethouse"
-              className="h-60 w-125 object-cov</div>er transition duration-500 ease-in-out filter group-hover:blur-sm"
+              className="h-60 w-122 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-              <span className="text-black text-xl font-semibold">
+              <span className="text-black text-center text-xl font-semibold mx-5">
                 Sweethouse
+                <br />
+                <span className="text-sm text-black font-normal bg-white">
+                  Full-stack web application for a French pastry business,
+                  designed to showcase products and provide a seamless browsing
+                  experience for visitors. The site features responsive layouts,
+                  an intuitive UI/UX, and integrated click tracking through
+                  Kafka to gather insights on user interactions.
+                </span>
               </span>
             </div>
           </div>
