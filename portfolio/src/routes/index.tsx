@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Ribbons from "@/components/Ribbon";
 import RotatingText from "@/components/RotatingText";
+import Marquee from "react-fast-marquee";
 import { useNavigate } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -90,7 +91,9 @@ function App() {
               className="h-60 w-125 object-cover transition duration-500 ease-in-out filter group-hover:blur-sm"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-              <span className="text-white text-xl font-semibold">Nova Bank</span>
+              <span className="text-white text-xl font-semibold">
+                Nova Bank
+              </span>
             </div>
           </div>
           <div
@@ -109,6 +112,14 @@ function App() {
             </div>
           </div>
         </div>
+        <Marquee speed={30} autoFill={true} className="border-b py-1">
+          <img src="profile.jpg"></img>
+          <img src="profile.jpg"></img>
+          <img src="profile.jpg"></img>
+          <img src="profile.jpg"></img>
+          <img src="profile.jpg"></img>
+          <img src="profile.jpg"></img>
+        </Marquee>
       </div>
       <Ribbons
         baseThickness={10}
