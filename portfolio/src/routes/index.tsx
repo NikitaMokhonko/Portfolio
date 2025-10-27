@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
 function App() {
   const navigate = useNavigate();
   return (
-    <div className="w-full min-h-screen cursor-default">
+    <div className="w-[80%] min-h-screen cursor-default mx-auto">
       <div className="w-full flex justify-between">
         <div className="sm:pt-30 sm:pl-10">
           <h1 className="text-5xl">
@@ -72,7 +72,7 @@ function App() {
             <img
               src="Skinsmart-picture.png"
               alt="Skinsmart"
-              className="h-60 w-122 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
+              className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-white/30">
               <span className="text-black text-center text-xl font-bold mx-5">
@@ -95,7 +95,7 @@ function App() {
             <img
               src="Novabank-picture.png"
               alt="Novabank"
-              className="h-60 w-122 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
+              className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-black/30">
               <span className="text-white text-center text-xl font-bold mx-5">
@@ -117,7 +117,7 @@ function App() {
             <img
               src="Sweethouse-picture.png"
               alt="Sweethouse"
-              className="h-60 w-122 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
+              className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-white/30">
               <span className="text-black text-center text-xl font-bold mx-5">
