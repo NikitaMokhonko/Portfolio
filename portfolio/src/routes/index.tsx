@@ -12,8 +12,10 @@ import {
   SiPython,
   SiFigma,
   SiVercel,
-  SiVite,
-  SiHtml5
+  SiHtml5,
+  SiAmazon,
+  SiGooglecloud,
+  SiCss3
 } from "react-icons/si";
 import {
   DiJavascript,
@@ -32,7 +34,7 @@ function TechDeck({
       <div className="relative h-40 flex items-center justify-beginning">
         <div className="relative flex items-center">
           {items.map((item, i) => {
-            const offset = i -50; 
+            const offset = i -48; 
             return (
               <button
                 key={item.name}
@@ -40,7 +42,7 @@ function TechDeck({
                 onMouseLeave={() => setFocused(null)}
                 onFocus={() => setFocused(i)}
                 onBlur={() => setFocused(null)}
-                className={`group relative w-40 h-50 rounded-2xl  bg-white border border-gray-100 shadow-lg flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(.2,.9,.2,1)] focus:outline-none`}
+                className={`group relative w-35 h-50 rounded-2xl  bg-white border border-gray-100 shadow-md flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(.2,.9,.2,1)] focus:outline-none`}
                 style={{
                   marginLeft: i === 0 ? 0 : offset,
                   zIndex: focused === i ? 40 : 10 + i,
@@ -89,16 +91,18 @@ function App() {
   const techItems = [
     { Icon: SiReact, name: "React", color: "#61DAFB" },
     { Icon: SiHtml5, name: "HTML5", color: "#E34F26" },
-    { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-    { Icon: DiJavascript, name: "JavaScript", color: "#F7DF1E" },
-    { Icon: SiVite, name: "Vite", color: "#646CFF" },
+    { Icon: SiCss3, name: "CSS3", color: "#1572B6" },
     { Icon: SiTailwindcss, name: "Tailwind", color: "#38B2AC" },
+    { Icon: DiJavascript, name: "JavaScript", color: "#F7DF1E" },
+    { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
     { Icon: SiFigma, name: "Figma", color: "#F24E1E" },
-    { Icon: SiVercel, name: "Vercel", color: "#000000" },
     { Icon: DiJava, name: "Java", color: "#007396" },
     { Icon: SiPython, name: "Python", color: "#3776AB" },
     { Icon: SiDocker, name: "Docker", color: "#2496ED" },
     { Icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
+    { Icon: SiVercel, name: "Vercel", color: "#000000" },
+    { Icon: SiAmazon, name: "AWS", color: "#FF9900" },
+    { Icon: SiGooglecloud, name: "GCP", color: "#4285F4" },
   ];
 
   return (
