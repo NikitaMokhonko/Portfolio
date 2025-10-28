@@ -1,7 +1,79 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import Ribbons from "@/components/Ribbon";
 import RotatingText from "@/components/RotatingText";
 import { useNavigate } from "@tanstack/react-router";
+import {
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiDocker,
+  SiPostgresql,
+  SiPython,
+  SiFigma,
+  SiVercel,
+  SiVite,
+} from "react-icons/si";
+import { DiJavascript} from "react-icons/di";
+
+function TechDeck({
+  items,
+}: {
+  items: { name: string; Icon: any; color?: string }[];
+}) {
+  const [focused, setFocused] = useState<number | null>(null);
+
+  return (
+    <div className="mt-6">
+      <div className="relative h-40 flex items-center justify-beginning">
+        <div className="relative flex items-center">
+          {items.map((item, i) => {
+            const offset = i -30; 
+            return (
+              <button
+                key={item.name}
+                onMouseEnter={() => setFocused(i)}
+                onMouseLeave={() => setFocused(null)}
+                onFocus={() => setFocused(i)}
+                onBlur={() => setFocused(null)}
+                className={`group relative w-40 h-50 rounded-2xl  bg-white border border-gray-100 shadow-lg flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(.2,.9,.2,1)] focus:outline-none`}
+                style={{
+                  marginLeft: i === 0 ? 0 : offset,
+                  zIndex: focused === i ? 40 : 10 + i,
+                  transform:
+                    focused === i ? "translateY(-10px) scale(1.15)" : "none",
+                }}
+                aria-label={item.name}
+                type="button"
+              >
+                <div className="flex flex-col items-center justify-center pointer-events-none">
+                  <div
+                    className="text-4xl"
+                    style={{ color: item.color ?? "black" }}
+                    aria-hidden="true"
+                  >
+                    <item.Icon />
+                  </div>
+                </div>
+
+                <div
+                  className="absolute bottom-8 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-black text-md opacity-0 transform translate-y-2 transition-all duration-400 pointer-events-none"
+                  style={{
+                    opacity: focused === i ? 1 : 0,
+                    transform:
+                      focused === i ? "translateY(0)" : "translateY(8px)",
+                  }}
+                >
+                  {item.name}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -9,6 +81,20 @@ export const Route = createFileRoute("/")({
 
 function App() {
   const navigate = useNavigate();
+
+  const techItems = [
+    { Icon: SiReact, name: "React", color: "#61DAFB" },
+    { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+    { Icon: DiJavascript, name: "JavaScript", color: "#F7DF1E" },
+    { Icon: SiTailwindcss, name: "Tailwind", color: "#38B2AC" },
+    { Icon: SiDocker, name: "Docker", color: "#2496ED" },
+    { Icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
+    { Icon: SiPython, name: "Python", color: "#3776AB" },
+    { Icon: SiFigma, name: "Figma", color: "#F24E1E" },
+    { Icon: SiVercel, name: "Vercel", color: "#000000" },
+    { Icon: SiVite, name: "Vite", color: "#646CFF" },
+  ];
+
   return (
     <div className="w-[80%] min-h-screen cursor-default mx-auto">
       <div className="w-full flex justify-between">
@@ -49,6 +135,14 @@ function App() {
             alt="Profile Picture"
             className="mt-25 mr-10 h-100 w-100 border shadow-xl hover:rotate-z-5 duration-500"
           />
+        </div>
+      </div>
+      <div className="mt-50">
+        <div className="flex justify-between sm:px-10">
+          <h1 className="text-3xl">Tech Stack</h1>
+        </div>
+        <div className="flex justify-start mx-10 mt-10">
+          <TechDeck items={techItems} />
         </div>
       </div>
       <div className="mt-50">
