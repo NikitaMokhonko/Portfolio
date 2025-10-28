@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useNavigate } from "@tanstack/react-router";
-import Ribbons from "@/components/Ribbon";
 
 export const Route = createFileRoute("/novabank")({
   component: RouteComponent,
@@ -49,14 +48,14 @@ function RouteComponent() {
                 onClick={(e) => e.preventDefault()}
                 className="inline-flex items-center justify-center px-5 py-2 bg-black text-white rounded-md shadow hover:bg-neutral-900 transition"
               >
-                View live
+                View Live
               </a>
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
                 className="inline-flex items-center justify-center px-5 py-2 border border-gray-200 rounded-md hover:shadow transition"
               >
-                View code
+                View Repo
               </a>
             </div>
 
@@ -67,7 +66,7 @@ function RouteComponent() {
               </div>
               <div>
                 <h4 className="font-medium text-gray-900">Timeline</h4>
-                <p>8 weeks</p>
+                <p>3 weeks</p>
               </div>
               <div>
                 <h4 className="font-medium text-gray-900">Highlights</h4>
@@ -89,21 +88,21 @@ function RouteComponent() {
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="Novabank-shot-1.png"
+                src="Novabank-picture.png"
                 alt="NovaBank shot 1"
                 className="w-full h-60 object-cover"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="Novabank-shot-2.png"
+                src="Novabank-picture.png"
                 alt="NovaBank shot 2"
                 className="w-full h-60 object-cover"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="Novabank-shot-3.png"
+                src="Novabank-picture.png"
                 alt="NovaBank shot 3"
                 className="w-full h-60 object-cover"
               />
@@ -142,15 +141,6 @@ function RouteComponent() {
           </div>
         </section>
       </div>
-
-      <Ribbons
-        baseThickness={10}
-        colors={["#000000"]}
-        speedMultiplier={0.4}
-        maxAge={500}
-        enableFade={true}
-        enableShaderEffect={false}
-      />
     </div>
   );
 }
