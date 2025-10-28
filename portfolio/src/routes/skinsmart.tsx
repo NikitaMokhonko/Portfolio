@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useNavigate } from "@tanstack/react-router";
-import Ribbons from "@/components/Ribbon";
 
 export const Route = createFileRoute("/skinsmart")({
   component: RouteComponent,
