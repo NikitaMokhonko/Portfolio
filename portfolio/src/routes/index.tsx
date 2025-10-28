@@ -13,8 +13,12 @@ import {
   SiFigma,
   SiVercel,
   SiVite,
+  SiHtml5
 } from "react-icons/si";
-import { DiJavascript} from "react-icons/di";
+import {
+  DiJavascript,
+  DiJava
+} from "react-icons/di";
 
 function TechDeck({
   items,
@@ -28,7 +32,7 @@ function TechDeck({
       <div className="relative h-40 flex items-center justify-beginning">
         <div className="relative flex items-center">
           {items.map((item, i) => {
-            const offset = i -30; 
+            const offset = i -50; 
             return (
               <button
                 key={item.name}
@@ -84,15 +88,17 @@ function App() {
 
   const techItems = [
     { Icon: SiReact, name: "React", color: "#61DAFB" },
+    { Icon: SiHtml5, name: "HTML5", color: "#E34F26" },
     { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
     { Icon: DiJavascript, name: "JavaScript", color: "#F7DF1E" },
+    { Icon: SiVite, name: "Vite", color: "#646CFF" },
     { Icon: SiTailwindcss, name: "Tailwind", color: "#38B2AC" },
-    { Icon: SiDocker, name: "Docker", color: "#2496ED" },
-    { Icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
-    { Icon: SiPython, name: "Python", color: "#3776AB" },
     { Icon: SiFigma, name: "Figma", color: "#F24E1E" },
     { Icon: SiVercel, name: "Vercel", color: "#000000" },
-    { Icon: SiVite, name: "Vite", color: "#646CFF" },
+    { Icon: DiJava, name: "Java", color: "#007396" },
+    { Icon: SiPython, name: "Python", color: "#3776AB" },
+    { Icon: SiDocker, name: "Docker", color: "#2496ED" },
+    { Icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
   ];
 
   return (
