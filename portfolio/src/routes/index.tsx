@@ -147,7 +147,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="mt-50">
+      <div className="mt-40">
         <div className="flex justify-between sm:px-10">
           <h1 className="text-3xl">Tech Stack</h1>
         </div>
@@ -155,7 +155,7 @@ function App() {
           <TechDeck items={techItems} />
         </div>
       </div>
-      <div className="mt-50">
+      <div className="mt-40">
         <div className="flex justify-between sm:px-10">
           <h1 className="text-3xl">Projects</h1>
           <button
