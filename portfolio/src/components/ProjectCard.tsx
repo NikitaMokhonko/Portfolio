@@ -25,11 +25,11 @@ export default function ProjectCard({
         alt={title}
         className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
       />
-      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-black/30">
-              <span className="text-white text-center text-xl font-bold mx-5">
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-white/40">
+              <span className="text-black text-center text-xl font-bold mx-5">
                   {title}
                   <br/>
-                <span className="text-sm text-white font-semibold">
+                <span className="text-sm text-black font-semibold">
                       { description}
                 </span>
               </span>
