@@ -14,6 +14,7 @@ import { Route as SkinsmartRouteImport } from './routes/skinsmart'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as NovabankRouteImport } from './routes/novabank'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AiAssessmentRouteImport } from './routes/ai-assessment'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -42,6 +43,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiAssessmentRoute = AiAssessmentRouteImport.update({
+  id: '/ai-assessment',
+  path: '/ai-assessment',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -56,6 +62,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
   '/novabank': typeof NovabankRoute
   '/projects': typeof ProjectsRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
   '/novabank': typeof NovabankRoute
   '/projects': typeof ProjectsRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
   '/novabank': typeof NovabankRoute
   '/projects': typeof ProjectsRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ai-assessment'
     | '/contact'
     | '/novabank'
     | '/projects'
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ai-assessment'
     | '/contact'
     | '/novabank'
     | '/projects'
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/ai-assessment'
     | '/contact'
     | '/novabank'
     | '/projects'
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AiAssessmentRoute: typeof AiAssessmentRoute
   ContactRoute: typeof ContactRoute
   NovabankRoute: typeof NovabankRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-assessment': {
+      id: '/ai-assessment'
+      path: '/ai-assessment'
+      fullPath: '/ai-assessment'
+      preLoaderRoute: typeof AiAssessmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -178,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AiAssessmentRoute: AiAssessmentRoute,
   ContactRoute: ContactRoute,
   NovabankRoute: NovabankRoute,
   ProjectsRoute: ProjectsRoute,
