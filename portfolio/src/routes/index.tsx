@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import Ribbons from "@/components/Ribbon";
 import RotatingText from "@/components/RotatingText";
 import { useNavigate } from "@tanstack/react-router";
+import ProjectCard from "@/components/ProjectCard";
 import {
   SiReact,
   SiTypescript,
@@ -169,74 +170,35 @@ function App() {
           </button>
         </div>
         <div className="mt-14 px-10 flex flex-row justify-between mb-20">
-          <div
-            className="relative group cursor-pointer"
-            onClick={() => navigate({ to: "/skinsmart" })}
-          >
-            <img
-              src="Skinsmart-picture.png"
-              alt="Skinsmart"
-              className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
-            />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-white/30">
-              <span className="text-black text-center text-xl font-bold mx-5">
-                SkinSmart
-                <br />
-                <span className="text-sm text-black font-semibold">
-                  Responsive frontend website built for a CS2 business, designed
+          <ProjectCard
+            title="SkinSmart"
+            description="Responsive frontend website built for a CS2 business, designed
                   to let users easily contact the company to sell their items.
                   The site features a sleek, modern interface, clear
                   presentation of contact options, and a layout optimized for
-                  quick navigation.
-                </span>
-              </span>
-            </div>
-          </div>
-          <div
-            className="relative group cursor-pointer"
-            onClick={() => navigate({ to: "/novabank" })}
-          >
-            <img
-              src="Novabank-picture.png"
-              alt="Novabank"
-              className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
-            />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-black/30">
-              <span className="text-white text-center text-xl font-bold mx-5">
-                Nova Bank
-                <br />
-                <span className="text-sm text-white font-semibold">
-                  Fully functioning mock banking application built in a team of
+                  quick navigation."
+            img="Skinsmart-picture.png"
+            to="/skinsmart"
+          />
+          <ProjectCard
+            title="Nova Bank"
+            description="Fully functioning mock banking application built in a team of
                   11 people, with features such as log in, dashboard, transfers
                   between accounts and users, transaction history with
-                  AI-powered search, loans and a fully robust admin page.
-                </span>
-              </span>
-            </div>
-          </div>
-          <div
-            className="relative group cursor-pointer"
-            onClick={() => navigate({ to: "/sweethouse" })}
-          >
-            <img
-              src="Sweethouse-picture.png"
-              alt="Sweethouse"
-              className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
-            />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-white/30">
-              <span className="text-black text-center text-xl font-bold mx-5">
-                Sweethouse
-                <br />
-                <span className="text-sm text-black font-semiboldl">
-                  Full-stack web application for a French pastry business,
+                  AI-powered search, loans and a fully robust admin page."
+            img="Novabank-picture.png"
+            to="/novabank"
+          />
+          <ProjectCard
+            title="Sweethouse"
+            description="Full-stack web application for a French pastry business,
                   designed to showcase products and provide a seamless browsing
                   experience for visitors. The site features responsive layouts,
                   an intuitive UI/UX, and integrated click tracking through
-                  Kafka to gather insights on user interactions.
-                </span>
-              </span>
-            </div>
-          </div>
+                  Kafka to gather insights on user interactions."
+            img="Sweethouse-picture.png"
+            to="/sweethouse"
+          />
         </div>
       </div>
       <Ribbons
