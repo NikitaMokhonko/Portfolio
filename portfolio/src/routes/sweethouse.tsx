@@ -89,21 +89,21 @@ function RouteComponent() {
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="Sweethouse-shot-1.png"
+                src="Sweethouse-picture.png"
                 alt="Sweethouse shot 1"
                 className="w-full h-60 object-cover"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="Sweethouse-shot-2.png"
+                src="Sweethouse-picture.png"
                 alt="Sweethouse shot 2"
                 className="w-full h-60 object-cover"
               />
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
               <img
-                src="Sweethouse-shot-3.png"
+                src="Sweethouse-picture.png"
                 alt="Sweethouse shot 3"
                 className="w-full h-60 object-cover"
               />
