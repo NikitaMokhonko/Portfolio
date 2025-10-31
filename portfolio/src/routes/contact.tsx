@@ -46,7 +46,7 @@ function RouteComponent() {
                 rel="noopener noreferrer"
                 className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white"
               >
-                <div className="p-3 rounded-lg bg-gradient-to-b from-pink-500 to-[#feda75] text-white">
+                <div className="p-3 rounded-lg bg-linear-to-b from-pink-500 to-[#feda75] text-white">
                   <SiInstagram size={28} />
                 </div>
                 <div>
