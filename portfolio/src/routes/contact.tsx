@@ -20,7 +20,7 @@ function RouteComponent() {
 
       <div className="max-w-4xl mx-auto px-6 py-20">
         <header className="text-center mb-10 animate-gentle-pop">
-          <h1 className="text-4xl font-semibold">Get in touch</h1>
+          <h1 className="text-5xl">Get in touch</h1>
         </header>
 
         <main className="animate-gentle-pop">
@@ -72,7 +72,6 @@ function RouteComponent() {
                   </div>
                 </div>
               </a>
-
               <a
                 href="mailto:nikitamokhonko@gmail.com"
                 className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white"
@@ -87,6 +86,7 @@ function RouteComponent() {
                   </div>
                 </div>
               </a>
+
             </div>
           </div>
         </main>
