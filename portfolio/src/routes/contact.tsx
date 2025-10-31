@@ -19,7 +19,7 @@ function RouteComponent() {
       `}</style>
 
       <div className="max-w-4xl mx-auto px-6 py-20">
-        <header className="text-center mb-10 animate-gentle-pop">
+        <header className="text-center mb-15 animate-gentle-pop">
           <h1 className="text-5xl">Get in touch</h1>
         </header>
 
