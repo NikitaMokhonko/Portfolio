@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SweethouseRouteImport } from './routes/sweethouse'
 import { Route as SkinsmartRouteImport } from './routes/skinsmart'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as NovabankRouteImport } from './routes/novabank'
+import { Route as HomeEntertainmentRouteImport } from './routes/home-entertainment'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AiAssessmentRouteImport } from './routes/ai-assessment'
 import { Route as AboutRouteImport } from './routes/about'
@@ -33,9 +35,19 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NovabankRoute = NovabankRouteImport.update({
   id: '/novabank',
   path: '/novabank',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeEntertainmentRoute = HomeEntertainmentRouteImport.update({
+  id: '/home-entertainment',
+  path: '/home-entertainment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -64,7 +76,9 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
+  '/home-entertainment': typeof HomeEntertainmentRoute
   '/novabank': typeof NovabankRoute
+  '/portfolio': typeof PortfolioRoute
   '/projects': typeof ProjectsRoute
   '/skinsmart': typeof SkinsmartRoute
   '/sweethouse': typeof SweethouseRoute
@@ -74,7 +88,9 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
+  '/home-entertainment': typeof HomeEntertainmentRoute
   '/novabank': typeof NovabankRoute
+  '/portfolio': typeof PortfolioRoute
   '/projects': typeof ProjectsRoute
   '/skinsmart': typeof SkinsmartRoute
   '/sweethouse': typeof SweethouseRoute
@@ -85,7 +101,9 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
+  '/home-entertainment': typeof HomeEntertainmentRoute
   '/novabank': typeof NovabankRoute
+  '/portfolio': typeof PortfolioRoute
   '/projects': typeof ProjectsRoute
   '/skinsmart': typeof SkinsmartRoute
   '/sweethouse': typeof SweethouseRoute
@@ -97,7 +115,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-assessment'
     | '/contact'
+    | '/home-entertainment'
     | '/novabank'
+    | '/portfolio'
     | '/projects'
     | '/skinsmart'
     | '/sweethouse'
@@ -107,7 +127,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-assessment'
     | '/contact'
+    | '/home-entertainment'
     | '/novabank'
+    | '/portfolio'
     | '/projects'
     | '/skinsmart'
     | '/sweethouse'
@@ -117,7 +139,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-assessment'
     | '/contact'
+    | '/home-entertainment'
     | '/novabank'
+    | '/portfolio'
     | '/projects'
     | '/skinsmart'
     | '/sweethouse'
@@ -128,7 +152,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AiAssessmentRoute: typeof AiAssessmentRoute
   ContactRoute: typeof ContactRoute
+  HomeEntertainmentRoute: typeof HomeEntertainmentRoute
   NovabankRoute: typeof NovabankRoute
+  PortfolioRoute: typeof PortfolioRoute
   ProjectsRoute: typeof ProjectsRoute
   SkinsmartRoute: typeof SkinsmartRoute
   SweethouseRoute: typeof SweethouseRoute
@@ -157,11 +183,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/novabank': {
       id: '/novabank'
       path: '/novabank'
       fullPath: '/novabank'
       preLoaderRoute: typeof NovabankRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-entertainment': {
+      id: '/home-entertainment'
+      path: '/home-entertainment'
+      fullPath: '/home-entertainment'
+      preLoaderRoute: typeof HomeEntertainmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -200,7 +240,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AiAssessmentRoute: AiAssessmentRoute,
   ContactRoute: ContactRoute,
+  HomeEntertainmentRoute: HomeEntertainmentRoute,
   NovabankRoute: NovabankRoute,
+  PortfolioRoute: PortfolioRoute,
   ProjectsRoute: ProjectsRoute,
   SkinsmartRoute: SkinsmartRoute,
   SweethouseRoute: SweethouseRoute,
