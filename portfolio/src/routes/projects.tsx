@@ -7,7 +7,7 @@ export const Route = createFileRoute("/projects")({
 
 function RouteComponent() {
   return (
-    <div className="max-w-[80%] mx-auto bg-white text-black">
+    <div className="max-w-[80%] mx-auto bg-white text-black sm:min-h-screen">
       <div className="max-w-4xl mx-auto px-6 pt-20">
         <header className="text-center mb-10 animate-gentle-pop">
           <h1 className="text-4xl sm:text-5xl">My Projects</h1>
