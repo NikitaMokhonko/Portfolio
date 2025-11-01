@@ -107,7 +107,7 @@ function App() {
   ];
 
   return (
-    <div className="w-[80%] min-h-screen cursor-default mx-auto">
+    <div className="w-[80%] smin-h-screen cursor-default mx-auto mt-10 sm:mt-0">
       <div className="w-full flex justify-between">
         <div className="sm:pt-30 sm:pl-10">
           <h1 className="text-5xl">
@@ -144,11 +144,11 @@ function App() {
           <img
             src="profile.jpg"
             alt="Profile Picture"
-            className="mt-25 mr-10 h-100 w-100 border shadow-xl hover:rotate-z-5 duration-500"
+            className="mt-25 mr-10 h-100 w-100 border shadow-xl hover:rotate-z-5 duration-500 hidden sm:block"
           />
         </div>
       </div>
-      <div className="mt-40">
+      <div className="mt-20 sm:mt-40">
         <div className="flex justify-between sm:px-10">
           <h1 className="text-3xl">Tech Stack</h1>
         </div>
@@ -169,7 +169,7 @@ function App() {
             <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
         </div>
-        <div className="mt-14 px-10 flex flex-row justify-between mb-20">
+        <div className="mt-14 sm:px-10 flex flex-col sm:flex-row space-y-12 sm:space-y-0 justify-between sm:mb-20">
           <ProjectCard
             title="SkinSmart"
             description="Responsive frontend website built for a CS2 business, designed

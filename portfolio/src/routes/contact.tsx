@@ -24,8 +24,8 @@ function RouteComponent() {
         </header>
 
         <main className="animate-gentle-pop">
-          <div className="flex flex-col sm:flex-row gap-10 justify-center ">
-            <div className="space-y-5">
+          <div className="flex flex-col sm:flex-row sm:gap-10 justify-center ">
+            <div className="space-y-5 mb-5">
               <a
                 href="https://www.linkedin.com/in/nikitamokhonko/"
                 target="_blank"
