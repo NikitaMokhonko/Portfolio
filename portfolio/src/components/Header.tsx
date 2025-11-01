@@ -11,12 +11,12 @@ export default function Header() {
           onClick={() => navigate({ to: "/" })}
           className="flex flex-row px-5 py-2 justify-center sm:justify-start space-x-2 sm:space-x-3 items-center cursor-pointer"
         >
-          <img alt="Nikita Mokhonko Logo" className="w-16 h-16" src="nm.png" />
+          <img alt="Nikita Mokhonko Logo" className="w-14 h-14 sm:w-16 sm:h-16" src="nm.png" />
           <h1 className="text-3xl text-black hidden sm:block">
             Nikita Mokhonko
           </h1>
         </button>
-        <div className="flex flex-row pr-10 py-2 justify-center space-x-10 items-center text-xl">
+        <div className="flex flex-row pr-8 sm:pr-0 py-2 justify-center space-x-10 items-center text-xl">
           <button
             onClick={() => navigate({ to: "/about" })}
             className="hidden sm:block group flex-col items-start cursor-pointer bg-transparent border-0 p-0"
