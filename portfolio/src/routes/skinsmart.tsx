@@ -1,28 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useNavigate } from "@tanstack/react-router";
-
+import BackButton from "../components/BackButton";
 export const Route = createFileRoute("/skinsmart")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const navigate = useNavigate();
 
   return (
     <div className="w-[80%] mx-auto min-h-screen bg-white text-black cursor-default">
-      <style>{`
-        
-      `}</style>
       <div className="max-w-7xl mx-auto py-16">
-        <button
-          onClick={() => navigate({ to: "/" })}
-          className="text-sm text-gray-600 hover:text-black mb-6 inline-flex items-center gap-2 cursor-pointer"
-        >
-          ← Back
-        </button>
-
+        <BackButton />
         <section className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="overflow-hidden shadow-lg border border-gray-100 animate-sleek-bob">
+          <div className="overflow-hidden shadow-lg border border-gray-100">
             <img
               src="Skinsmart-picture.png"
               alt="SkinSmart preview"
@@ -108,8 +97,9 @@ function RouteComponent() {
           <div className="space-y-4">
             <h4 className="text-xl font-medium">Problem</h4>
             <p className="text-gray-600">
-              The client needed a simple, fast way for users to contact the company in order to sell items. The UI/UX had to be minimal, trustworthy and
-              accessible across all devices.
+              The client needed a simple, fast way for users to contact the
+              company in order to sell items. The UI/UX had to be minimal,
+              trustworthy and accessible across all devices.
             </p>
 
             <h4 className="text-xl font-medium">Solution</h4>
