@@ -11,9 +11,10 @@ function BackButton() {
           navigate({ to: "/" });
         }
       }}
-      className="text-sm text-gray-600 hover:text-black mb-6 inline-flex items-center gap-2 cursor-pointer"
-    >
-      ← Back
+      className="text-md text-gray-600 hover:text-black mb-10 inline-flex items-center gap-2 cursor-pointer font-semibold"
+      >
+          <img src="arrow-back.png" className="w-5 h-5"></img>
+      Back
     </button>
   );
 }
