@@ -12,7 +12,7 @@ function RouteComponent() {
     <div className="w-[80%] mx-auto min-h-screen bg-white text-black cursor-default">
       <div className="max-w-4xl mx-auto px-6 py-20">
         <header className="text-center mb-15 animate-gentle-pop">
-          <h1 className="text-5xl">Get in touch</h1>
+          <h1 className="text-4xl sm:text-5xl">Get in touch</h1>
         </header>
 
         <main className="animate-gentle-pop">

@@ -7,11 +7,10 @@ export const Route = createFileRoute("/projects")({
 
 function RouteComponent() {
   return (
-    <div className="max-w-[80%] mx-auto min-h-screen bg-white text-black">
-
+    <div className="max-w-[80%] mx-auto bg-white text-black">
       <div className="max-w-4xl mx-auto px-6 pt-20">
         <header className="text-center mb-10 animate-gentle-pop">
-          <h1 className="text-3xl sm:text-5xl">My Projects</h1>
+          <h1 className="text-4xl sm:text-5xl">My Projects</h1>
         </header>
       </div>
       <div className="mt-20 sm:px-10 flex flex-col sm:flex-row space-y-10 sm:space-y-0 justify-between sm:mb-20 animate-gentle-pop">

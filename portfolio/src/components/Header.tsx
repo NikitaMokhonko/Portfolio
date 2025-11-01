@@ -47,7 +47,7 @@ export default function Header() {
             <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
           <button
-            className="md:hidden flex flex-col space-y-1 p-2"
+            className="md:hidden flex flex-col space-y-1"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <span
@@ -69,7 +69,7 @@ export default function Header() {
         </div>
       </div>
             {menuOpen && (
-              <div className="sm:hidden flex flex-col bg-white p-5 text-lg space-y-4 border-b">
+              <div className="sm:hidden flex flex-col bg-white font-semibold p-5 text-lg space-y-5 border-b">
                 <button
                   onClick={() => {
                     navigate({ to: "/about" });

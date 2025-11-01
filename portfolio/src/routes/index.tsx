@@ -48,14 +48,14 @@ function App() {
   ];
 
   return (
-    <div className="w-[80%] smin-h-screen cursor-default mx-auto mt-12 sm:mt-0">
+    <div className="w-[80%] smin-h-screen cursor-default mx-auto mt-10 sm:text-left text-center sm:mt-0">
       <div className="w-full flex justify-between">
-        <div className="sm:pt-30 sm:pl-10">
-          <h1 className="text-5xl">
+        <div className="sm:pt-30 sm:pl-10 aninmate-gentle-pop">
+          <h1 className="text-5xl leading-14">
             Turning Your Imagination Into{" "}
             <RotatingText
               texts={["Reality", "Success", "A Business"]}
-              mainClassName=""
+              mainClassName="justify-center sm:justify-start"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -90,19 +90,32 @@ function App() {
         </div>
       </div>
       <div className="mt-20 sm:mt-40">
-        <div className="flex justify-between sm:px-10">
+        <div className="flex sm:px-10 justify-center sm:justify-start">
           <h1 className="text-3xl">Tech Stack</h1>
         </div>
-        <div className="flex justify-start mx-10 mt-10">
+        <div className="hidden sm:block mx-10 mt-16">
           <TechDeck items={techItems} />
         </div>
+        <div className="sm:hidden grid grid-cols-4 gap-10 sm:gap-0 py-4 sm:py-0 mt-10 sm:mt-0 text-center">
+          {techItems.map((item) => (
+            <div
+              key={item.name}
+              className="flex flex-col items-center justify-center"
+            >
+              <item.Icon
+                className="text-4xl"
+                style={{ color: item.color ?? "black" }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="mt-40">
-        <div className="flex justify-between sm:px-10">
+      <div className="mt-20 sm:mt-40">
+        <div className="flex justify-center sm:justify-between sm:px-10">
           <h1 className="text-3xl">Projects</h1>
           <button
             onClick={() => navigate({ to: "/projects" })}
-            className="group flex flex-col items-start cursor-pointer bg-transparent border-0 p-0"
+            className="hidden sm:block group flex-col items-start cursor-pointer bg-transparent border-0 p-0"
             aria-label="Projects"
             type="button"
           >
@@ -110,7 +123,7 @@ function App() {
             <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
           </button>
         </div>
-        <div className="mt-14 sm:px-10 flex flex-col sm:flex-row space-y-12 sm:space-y-0 justify-between sm:mb-20">
+        <div className="mt-14 sm:px-10 flex flex-col sm:flex-row space-y-12 sm:space-y-0 justify-between mb-20">
           <ProjectCard
             title="SkinSmart"
             description="Responsive frontend website built for a CS2 business, designed
