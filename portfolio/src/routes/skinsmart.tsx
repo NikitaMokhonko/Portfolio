@@ -11,19 +11,8 @@ function RouteComponent() {
   return (
     <div className="w-[80%] mx-auto min-h-screen bg-white text-black cursor-default">
       <style>{`
-        @keyframes subtle-fade {
-          from { opacity: 0; transform: translateY(6px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-subtle-fade { animation: subtle-fade 420ms cubic-bezier(.2,.9,.2,1) both; }
-        @keyframes sleek-bob {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-5px); }
-          100% { transform: translateY(0); }
-        }
-        .animate-sleek-bob { animation: sleek-bob 4.5s ease-in-out infinite; will-change: transform; }
+        
       `}</style>
-
       <div className="max-w-7xl mx-auto py-16">
         <button
           onClick={() => navigate({ to: "/" })}
@@ -33,7 +22,7 @@ function RouteComponent() {
         </button>
 
         <section className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100 animate-sleek-bob">
+          <div className="overflow-hidden shadow-lg border border-gray-100 animate-sleek-bob">
             <img
               src="Skinsmart-picture.png"
               alt="SkinSmart preview"
@@ -92,21 +81,21 @@ function RouteComponent() {
         <section className="mt-14 animate-subtle-fade">
           <h3 className="text-2xl font-semibold mb-6">Gallery</h3>
           <div className="grid sm:grid-cols-3 gap-6">
-            <div className="rounded-lg overflow-hidden shadow-md border border-gray-100">
+            <div className="overflow-hidden shadow-md border border-gray-100">
               <img
                 src="Skinsmart-picture.png"
                 alt="SkinSmart shot 1"
                 className="w-full h-60 object-cover"
               />
             </div>
-            <div className="rounded-lg overflow-hidden shadow-md border border-gray-100">
+            <div className="overflow-hidden shadow-md border border-gray-100">
               <img
                 src="Skinsmart-picture.png"
                 alt="SkinSmart shot 2"
                 className="w-full h-60 object-cover"
               />
             </div>
-            <div className="rounded-lg overflow-hidden shadow-md border border-gray-100">
+            <div className="overflow-hidden shadow-md border border-gray-100">
               <img
                 src="Skinsmart-picture.png"
                 alt="SkinSmart shot 3"
