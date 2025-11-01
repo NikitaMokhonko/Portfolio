@@ -20,7 +20,7 @@ body {
 }
 
 .animate-gentle-pop {
-  animation: gentle-pop 480ms var(--ease) both;
+  animation: gentle-pop 700ms var(--ease) both;
 }
 
 .card-pop {

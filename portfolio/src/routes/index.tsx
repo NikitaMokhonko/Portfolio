@@ -49,8 +49,8 @@ function App() {
 
   return (
     <div className="w-[80%] smin-h-screen cursor-default mx-auto mt-10 sm:text-left text-center sm:mt-0">
-      <div className="w-full flex justify-between">
-        <div className="sm:pt-30 sm:pl-10 aninmate-gentle-pop">
+      <div className="w-full flex justify-between animate-gentle-pop">
+        <div className="sm:pt-30 sm:pl-10">
           <h1 className="text-5xl leading-14">
             Turning Your Imagination Into{" "}
             <RotatingText
@@ -89,7 +89,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="mt-20 sm:mt-40">
+      <div className="mt-20 sm:mt-30">
         <div className="flex sm:px-10 justify-center sm:justify-start">
           <h1 className="text-3xl">Tech Stack</h1>
         </div>

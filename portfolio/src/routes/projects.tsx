@@ -9,7 +9,7 @@ function RouteComponent() {
   return (
     <div className="max-w-[80%] mx-auto bg-white text-black sm:min-h-screen">
       <div className="max-w-4xl mx-auto px-6 pt-20">
-        <header className="text-center mb-10 animate-gentle-pop">
+        <header className="text-center mb-10">
           <h1 className="text-4xl sm:text-5xl">My Projects</h1>
         </header>
       </div>
@@ -44,7 +44,7 @@ function RouteComponent() {
           to="/sweethouse"
         />
       </div>
-      <div className="mt-14 sm:px-10 flex flex-col sm:flex-row space-y-10 sm:space-y-0 justify-between mb-20">
+      <div className="mt-14 sm:px-10 flex flex-col sm:flex-row space-y-10 sm:space-y-0 justify-between mb-20 animate-gentle-pop">
         <ProjectCard
           title="Home EntertAInment System"
           description="Full-stack AI-powered entertainment platform designed to help users discover and interact with personalized content such as quizzes, movies, and stories through a sleek and responsive interface."
