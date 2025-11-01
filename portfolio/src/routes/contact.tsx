@@ -10,14 +10,6 @@ export const Route = createFileRoute("/contact")({
 function RouteComponent() {
   return (
     <div className="w-[80%] mx-auto min-h-screen bg-white text-black cursor-default">
-      <style>{`
-        :root { --ease: cubic-bezier(.2,.9,.2,1); }
-        @keyframes gentle-pop { from { opacity: 0; transform: translateY(8px) scale(.997);} to { opacity: 1; transform: translateY(0) scale(1);} }
-        .animate-gentle-pop { animation: gentle-pop 480ms var(--ease) both; }
-        .contact-card { transition: transform 280ms var(--ease), box-shadow 280ms var(--ease), background 200ms; }
-        .contact-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.08); }
-      `}</style>
-
       <div className="max-w-4xl mx-auto px-6 py-20">
         <header className="text-center mb-15 animate-gentle-pop">
           <h1 className="text-5xl">Get in touch</h1>

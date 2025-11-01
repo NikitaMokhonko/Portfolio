@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import "./assets/css/zodiak.css";
 import ReactDOM from 'react-dom/client'
+import "./styles.css";
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
 // Import the generated route tree
