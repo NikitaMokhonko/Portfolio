@@ -24,6 +24,19 @@ export default defineConfig({
       /^react-icons\//,
     ],
   },
+  build: {
+    rollupOptions: {
+      external: [],
+      output: {
+        manualChunks(id) {
+          if (id.includes("react-icons/si") || id.includes("react-icons/hi")) {
+            return "react-icons-chunk";
+          }
+        },
+      },
+    },
+  },
+
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
