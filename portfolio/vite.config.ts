@@ -19,10 +19,7 @@ export default defineConfig({
     include: ["react-icons/si", "react-icons/hi"],
   },
   ssr: {
-    noExternal: [
-      "react-icons",
-      /^react-icons\//,
-    ],
+    noExternal: ["react-icons", /^react-icons\//],
   },
   build: {
     rollupOptions: {
@@ -34,6 +31,10 @@ export default defineConfig({
           }
         },
       },
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true,
     },
   },
 
