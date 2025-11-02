@@ -19,7 +19,10 @@ export default defineConfig({
     include: ["react-icons/si", "react-icons/hi"],
   },
   ssr: {
-    noExternal: ["react-icons"],
+    noExternal: [
+      "react-icons",
+      /^react-icons\//,
+    ],
   },
   resolve: {
     alias: {
