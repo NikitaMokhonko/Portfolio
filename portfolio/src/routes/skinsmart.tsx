@@ -23,7 +23,7 @@ function RouteComponent() {
               SkinSmart
             </h1>
             <p className="text-lg text-gray-600 max-w-xl text-center sm:text-left">
-              A modern, responsive frontend for a CS2 buy/sell business —
+              A modern, responsive frontend for a CS2 buy/sell business that was
               crafted to feel fast, intuitive and polished. Clean typography,
               careful spacing and focused interactions make the experience feel
               premium and approachable.
@@ -69,32 +69,6 @@ function RouteComponent() {
             </div>
           </div>
         </section>
-        <section className="mt-14 animate-subtle-fade">
-          <h3 className="text-2xl font-semibold mb-6">Gallery</h3>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="overflow-hidden shadow-md border border-gray-100">
-              <img
-                src="Skinsmart-picture.png"
-                alt="SkinSmart shot 1"
-                className="w-full sm:h-60 object-cover"
-              />
-            </div>
-            <div className="overflow-hidden shadow-md border border-gray-100">
-              <img
-                src="Skinsmart-picture.png"
-                alt="SkinSmart shot 2"
-                className="w-full sm:h-60 object-cover"
-              />
-            </div>
-            <div className="overflow-hidden shadow-md border border-gray-100">
-              <img
-                src="Skinsmart-picture.png"
-                alt="SkinSmart shot 3"
-                className="w-full sm:h-60 object-cover"
-              />
-            </div>
-          </div>
-        </section>
         <section className="mt-14 grid md:grid-cols-2 gap-6 sm:gap-12">
           <div className="space-y-4">
             <h4 className="text-xl font-semibold">Problem</h4>
@@ -117,7 +91,7 @@ function RouteComponent() {
             <ul className="list-disc list-inside text-gray-600">
               <li>Clean UI/UX, logos & animations</li>
               <li>Hosting with purchased domain through Vercel</li>
-              <li>Performance and accessibility tuning</li>
+              <li>Performance, SEO and accessibility tuning</li>
             </ul>
 
             <h4 className="text-xl font-semibold">Takeaways</h4>

@@ -1,156 +1,131 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useNavigate } from "@tanstack/react-router";
-import Ribbons from "@/components/Ribbon";
-
+import BackButton from "../components/BackButton";
 export const Route = createFileRoute("/sweethouse")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const navigate = useNavigate();
-
   return (
-    <div className="w-[80%] mx-auto min-h-screen bg-white text-black cursor-default">
-      <style>{`
-        @keyframes subtle-fade { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
-        .animate-subtle-fade { animation: subtle-fade 420ms cubic-bezier(.2,.9,.2,1) both; }
-        @keyframes sleek-bob { 0% { transform: translateY(0);} 50% { transform: translateY(-5px);} 100% { transform: translateY(0);} }
-        .animate-sleek-bob { animation: sleek-bob 4.5s ease-in-out infinite; will-change: transform; }
-      `}</style>
-
-      <div className="max-w-7xl mx-auto py-16">
-        <button
-          onClick={() => navigate({ to: "/" })}
-          className="text-sm text-gray-600 hover:text-black mb-6 inline-flex items-center gap-2 cursor-pointer"
-        >
-          ← Back
-        </button>
-
+    <div className="sm:w-[80%] w-[75%] mx-auto min-h-screen bg-white text-black cursor-default">
+      <div className="max-w-7xl mx-auto py-10 sm:py-16">
+        <BackButton />
         <section className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="rounded-xl overflow-hidden shadow-lg border border-gray-100 animate-sleek-bob">
+          <div className="overflow-hidden shadow-lg border border-gray-100">
             <img
               src="Sweethouse-picture.png"
               alt="Sweethouse preview"
-              className="w-full h-96 object-fill block"
+              className="w-full sm:h-96 object-fill block"
             />
           </div>
-
           <div className="space-y-6">
-            <h1 className="text-4xl font-semibold leading-tight">Sweethouse</h1>
-            <p className="text-lg text-gray-600 max-w-xl">
-              A modern e‑commerce showcase for artisanal products — refined
-              visuals, tactile micro-interactions and a calm shopping
+            <h1 className="text-4xl font-semibold leading-tight text-center sm:text-left">
+              Sweethouse
+            </h1>
+            <p className="text-lg text-gray-600 max-w-xl text-center sm:text-left">
+              A modern digital showcase for artisanal products with refined
+              visuals, tactile micro-interactions and a calm browsing
               experience.
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center sm:justify-start my-10 sm:my-6">
               <a
-                href="#"
+                href="https://sweethouse-jet.vercel.app/"
                 onClick={(e) => e.preventDefault()}
                 className="inline-flex items-center justify-center px-5 py-2 bg-black text-white rounded-md shadow hover:bg-neutral-900 transition"
               >
-                View live
+                View Live
               </a>
               <a
-                href="#"
+                href="https://github.com/NikitaMokhonko/sweethouse"
                 onClick={(e) => e.preventDefault()}
                 className="inline-flex items-center justify-center px-5 py-2 border border-gray-200 rounded-md hover:shadow transition"
               >
-                View code
+                View Repo
               </a>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
+            <div className="sm:grid grid-cols-2 gap-4 text-md sm:text-sm text-gray-700 leading-loose sm:leading-normal">
               <div>
-                <h4 className="font-medium text-gray-900">Role</h4>
-                <p>Lead Frontend — Visuals & interactions</p>
+                <h4 className="font-semibold text-gray-900">Role</h4>
+                <p>Solo developer responsible for full project</p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900">Timeline</h4>
-                <p>5 weeks</p>
+                <h4 className="font-semibold text-gray-900">Timeline</h4>
+                <p>2 weeks</p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900">Highlights</h4>
+                <h4 className="font-semibold text-gray-900">Highlights</h4>
                 <ul className="list-disc list-inside">
-                  <li>Immersive product pages</li>
-                  <li>Smooth add-to-cart micro-interactions</li>
+                  <li>Beautiful theme that fits the aesthetic</li>
+                  <li>Endless marquee & train animation</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900">Stack</h4>
-                <p>React · TypeScript · Tailwind</p>
+                <h4 className="font-semibold text-gray-900">Stack</h4>
+                <p>
+                  React · Tailwind · TypeScript · Vercel · Figma · Java · Kafka
+                </p>
               </div>
             </div>
           </div>
         </section>
-
         <section className="mt-14 animate-subtle-fade">
           <h3 className="text-2xl font-semibold mb-6">Gallery</h3>
           <div className="grid sm:grid-cols-3 gap-6">
-            <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
+            <div className="overflow-hidden shadow-md border border-gray-100">
               <img
-                src="Sweethouse-picture.png"
+                src="sweethouse-1.png"
                 alt="Sweethouse shot 1"
-                className="w-full h-60 object-cover"
+                className="w-full sm:h-60 object-cover"
               />
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
+            <div className="overflow-hidden shadow-md border border-gray-100">
               <img
-                src="Sweethouse-picture.png"
+                src="sweethouse-2.png"
                 alt="Sweethouse shot 2"
-                className="w-full h-60 object-cover"
+                className="w-full sm:h-60 object-cover"
               />
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg border border-gray-100">
+            <div className="overflow-hidden shadow-md border border-gray-100">
               <img
-                src="Sweethouse-picture.png"
+                src="sweethouse-3.png"
                 alt="Sweethouse shot 3"
-                className="w-full h-60 object-cover"
+                className="w-full sm:h-60 object-cover"
               />
             </div>
           </div>
         </section>
-
-        <section className="mt-14 grid md:grid-cols-2 gap-12">
+        <section className="mt-14 grid md:grid-cols-2 gap-6 sm:gap-12">
           <div className="space-y-4">
-            <h4 className="text-xl font-medium">Problem</h4>
+            <h4 className="text-xl font-semibold">Problem</h4>
             <p className="text-gray-600">
-              The client wanted a premium storefront that highlights
-              craftsmanship and product stories.
+              My girlfriend wanted a website to showcase her pastries, aiming to
+              reflect the brand's cozy yet professional vibe, while driving
+              sales.
             </p>
 
-            <h4 className="text-xl font-medium">Solution</h4>
+            <h4 className="text-xl font-semibold">Solution</h4>
             <p className="text-gray-600">
-              A calm, image-first layout with clear purchase flows and elegant
+              A calm, image-first layout with clear browsing flows and elegant
               visual rhythm to match the brand.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xl font-medium">Contributions</h4>
+            <h4 className="text-xl font-semibold">Contributions</h4>
             <ul className="list-disc list-inside text-gray-600">
-              <li>Product page composition</li>
-              <li>Checkout microcopy and validation</li>
-              <li>Accessible navigation</li>
+              <li>Clean UI/UX, logos & animations</li>
+              <li>Pictures that match the site aesthetic</li>
+              <li>Performance, SEO and accessibility tuning</li>
             </ul>
 
-            <h4 className="text-xl font-medium">Takeaways</h4>
+            <h4 className="text-xl font-semibold">Takeaways</h4>
             <p className="text-gray-600">
-              Strong visuals plus simple flows create a premium experience
-              without friction.
+              Small details like background and logo color can change the feel of a website drastically. Without the creamy background the website felt much colder and less inviting.
             </p>
           </div>
         </section>
       </div>
-
-      <Ribbons
-        baseThickness={10}
-        colors={["#000000"]}
-        speedMultiplier={0.4}
-        maxAge={500}
-        enableFade={true}
-        enableShaderEffect={false}
-      />
     </div>
   );
 }
