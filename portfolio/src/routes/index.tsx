@@ -15,12 +15,10 @@ import {
   SiHtml5,
   SiAmazon,
   SiGooglecloud,
-  SiCss3
-} from "react-icons/si";
-import {
+  SiCss3,
   DiJavascript,
   DiJava
-} from "react-icons/di";
+} from "@/components/Icons";
 import TechDeck from "@/components/TechDeck";
 
 export const Route = createFileRoute("/")({

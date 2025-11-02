@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Ribbons from "@/components/Ribbon";
-import { SiInstagram, SiGithub, SiLinkedin } from "react-icons/si";
-import { HiOutlineMail } from "react-icons/hi";
+import {
+  SiInstagram,
+  SiGithub,
+  SiLinkedin,
+  HiOutlineMail,
+} from "@/components/Icons";
 
 export const Route = createFileRoute("/contact")({
   component: RouteComponent,
@@ -78,7 +82,6 @@ function RouteComponent() {
                   </div>
                 </div>
               </a>
-
             </div>
           </div>
         </main>
