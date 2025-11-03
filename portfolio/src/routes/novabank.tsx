@@ -32,7 +32,7 @@ function RouteComponent() {
                 href="https://www.youtube.com/live/nE_16cvehM0?si=8DhKgkxW_ktEbOvX&t=1415"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-2 border bg-red-500 text-white rounded-md hover:shadow transition"
+                className="inline-flex items-center justify-center px-4 py-2 bg-red-500 text-white rounded-md hover:shadow transition"
               >
                 Watch Demo
               </a>
