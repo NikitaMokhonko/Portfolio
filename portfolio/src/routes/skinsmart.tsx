@@ -7,7 +7,7 @@ export const Route = createFileRoute("/skinsmart")({
 function RouteComponent() {
 
   return (
-    <div className="sm:w-[80%] w-[75%] mx-auto min-h-screen bg-white text-black cursor-default">
+    <div className="sm:w-[80%] w-[90%] mx-auto min-h-screen bg-white text-black cursor-default">
       <div className="max-w-7xl mx-auto py-10 sm:py-16">
         <BackButton />
         <section className="grid md:grid-cols-2 gap-12 items-center">
