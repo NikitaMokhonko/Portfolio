@@ -13,11 +13,18 @@ function TechDeck({
   }, []);
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 min-w-full">
       <div className="relative h-40 flex items-center justify-start">
         <div className="relative flex items-center">
           {items.map((item, i) => {
-            const offset = i - 48;
+            let offset = i - 0;
+            if (window.innerWidth > 620) {
+              offset = i -57;
+            }
+            if (window.innerWidth > 1920) {
+              offset = i - 23;
+            }
+
             const direction =
               i % 2 === 0 ? "-translate-x-50" : "translate-x-50";
 
@@ -27,7 +34,7 @@ function TechDeck({
                 onMouseEnter={() => setFocused(i)}
                 onMouseLeave={() => setFocused(null)}
                 className={`
-                  group relative w-35 h-50 rounded-2xl bg-white border border-gray-100 shadow-md 
+                  group relative w-34 h-50 rounded-2xl bg-white border border-gray-100 shadow-md 
                   flex items-center justify-center transition-transform duration-1000 ease-out
                   ${mounted ? "translate-x-0 opacity-100" : `${direction} opacity-0`}
                   hover:-translate-y-2 hover:scale-105

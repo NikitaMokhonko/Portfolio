@@ -17,6 +17,8 @@ export const SiHtml5 = SiIcons.SiHtml5;
 export const SiAmazon = SiIcons.SiAmazon;
 export const SiGooglecloud = SiIcons.SiGooglecloud;
 export const SiCss3 = SiIcons.SiCss3;
+export const DiGit = DiIcons.DiGit;
+export const SiVite = SiIcons.SiVite;
 
 export const DiJavascript = DiIcons.DiJavascript;
 export const DiJava = DiIcons.DiJava;

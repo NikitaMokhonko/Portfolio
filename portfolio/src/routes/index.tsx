@@ -17,7 +17,9 @@ import {
   SiGooglecloud,
   SiCss3,
   DiJavascript,
-  DiJava
+  DiJava,
+  DiGit,
+  SiVite,
 } from "@/components/Icons";
 import TechDeck from "@/components/TechDeck";
 
@@ -35,11 +37,13 @@ function App() {
     { Icon: SiTailwindcss, name: "Tailwind", color: "#38B2AC" },
     { Icon: DiJavascript, name: "JavaScript", color: "#F7DF1E" },
     { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+    { Icon: SiVite, name: "Vite", color: "#646CFF" },
     { Icon: SiFigma, name: "Figma", color: "#F24E1E" },
     { Icon: DiJava, name: "Java", color: "#007396" },
     { Icon: SiPython, name: "Python", color: "#3776AB" },
     { Icon: SiDocker, name: "Docker", color: "#2496ED" },
     { Icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
+    { Icon: DiGit, name: "Git", color: "#F05032" },
     { Icon: SiVercel, name: "Vercel", color: "#000000" },
     { Icon: SiAmazon, name: "AWS", color: "#FF9900" },
     { Icon: SiGooglecloud, name: "GCP", color: "#4285F4" },
