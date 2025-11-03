@@ -23,7 +23,7 @@ export default function ProjectCard({
       <img
         src={img}
         alt={title}
-        className="h-50 w-100 border object-cover transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
+        className="h-50 w-100 border object-fill transition duration-500 ease-in-out filter group-hover:blur-lg shadow-lg"
       />
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 bg-white/40">
               <span className="text-black text-center text-xl font-bold mx-5">
