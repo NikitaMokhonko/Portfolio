@@ -30,14 +30,16 @@ function RouteComponent() {
             <div className="flex gap-4 justify-center sm:justify-start my-10 sm:my-6">
               <a
                 href="https://sweethouse-jet.vercel.app/"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2 bg-black text-white rounded-md shadow hover:bg-neutral-900 transition"
               >
                 View Live
               </a>
               <a
                 href="https://github.com/NikitaMokhonko/sweethouse"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2 border border-gray-200 rounded-md hover:shadow transition"
               >
                 View Repo
@@ -121,7 +123,9 @@ function RouteComponent() {
 
             <h4 className="text-xl font-semibold">Takeaways</h4>
             <p className="text-gray-600">
-              Small details like background and logo color can change the feel of a website drastically. Without the creamy background the website felt much colder and less inviting.
+              Small details like background and logo color can change the feel
+              of a website drastically. Without the creamy background the
+              website felt much colder and less inviting.
             </p>
           </div>
         </section>

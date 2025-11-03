@@ -22,22 +22,24 @@ function RouteComponent() {
               Nova Bank
             </h1>
             <p className="text-lg text-gray-600 max-w-xl text-center sm:text-left">
-              A clean, secure full-stack banking app built for clarity and
-              trust by a team of 11. Focused on a modern feeling, clear buttons and minimalistic
-              components to feel premium and seamless.
+              A clean, secure full-stack banking app built for clarity and trust
+              by a team of 11. Focused on a modern feeling, clear buttons and
+              minimalistic components to feel premium and seamless.
             </p>
 
             <div className="flex gap-4 justify-center sm:justify-start my-10 sm:my-6">
               <a
                 href="https://www.youtube.com/live/nE_16cvehM0?si=8DhKgkxW_ktEbOvX&t=1415"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2 border bg-red-500 text-white rounded-md hover:shadow transition"
               >
                 Watch Demo
               </a>
               <a
                 href="https://github.com/salt-community/jfs-2025-03-31-novabank-ab"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2 border border-gray-200 rounded-md hover:shadow transition"
               >
                 View Repo
@@ -124,7 +126,8 @@ function RouteComponent() {
 
             <h4 className="text-xl font-semibold">Takeaways</h4>
             <p className="text-gray-600">
-              This project really made me love UI/UX, and made me realize that a minimal aproach can often be the most effective.
+              This project really made me love UI/UX, and made me realize that a
+              minimal aproach can often be the most effective.
             </p>
           </div>
         </section>
