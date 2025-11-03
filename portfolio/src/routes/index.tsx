@@ -49,7 +49,7 @@ function App() {
     <div className="sm:w-[80%] w-[90%] min-h-screen cursor-default mx-auto mt-10 sm:text-left text-center sm:mt-0">
       <div className="w-full flex justify-between animate-gentle-pop">
         <div className="sm:pt-30 sm:pl-10">
-          <h1 className="text-5xl leading-14">
+          <h1 className="text-[46px] leading-14">
             Turning Your Imagination Into{" "}
             <RotatingText
               texts={["Reality", "Success", "A Business"]}
@@ -63,17 +63,17 @@ function App() {
               rotationInterval={5000}
             />
           </h1>
-          <h2 className="pt-8 text-xl">
+          <h2 className="pt-8 text-[20px]">
             Hi! I'm Nikita, a full stack developer with a passion for design.
           </h2>
-          <h3 className="pt-5 text-lg text-gray-500 max-w-2xl">
+          <h3 className="pt-5 text-[18px] text-gray-700 max-w-2xl">
             I love crafting seamless digital experiences that blend creativity
             with clean, scalable and efficient code. Whether it’s building
             full-stack web apps, designing intuitive and modern interfaces, or
             bringing bold ideas to life - I’m all about making technology feel
             human.
           </h3>
-          <h3 className="pt-3 text-lg text-gray-500 max-w-2xl">
+          <h3 className="pt-3 text-[18px] text-gray-700 max-w-2xl">
             Currently, I’m focused on full stack development using React,
             TypeScript, and Java with Spring Boot. Let’s build something amazing
             together!
