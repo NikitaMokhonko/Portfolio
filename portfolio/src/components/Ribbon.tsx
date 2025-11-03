@@ -33,6 +33,7 @@ const Ribbons: React.FC<RibbonsProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.innerWidth < 640) return;
     // create a full-viewport host appended to document.body so the canvas
     // isn't constrained by parent stacking contexts
     const host = document.createElement("div");
