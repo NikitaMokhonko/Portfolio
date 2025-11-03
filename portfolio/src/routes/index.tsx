@@ -46,7 +46,7 @@ function App() {
   ];
 
   return (
-    <div className="w-[80%] smin-h-screen cursor-default mx-auto mt-10 sm:text-left text-center sm:mt-0">
+    <div className="sm:w-[80%] w-[90%] min-h-screen cursor-default mx-auto mt-10 sm:text-left text-center sm:mt-0">
       <div className="w-full flex justify-between animate-gentle-pop">
         <div className="sm:pt-30 sm:pl-10">
           <h1 className="text-5xl leading-14">
