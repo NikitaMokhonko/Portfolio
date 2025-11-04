@@ -118,7 +118,7 @@ function RouteComponent() {
 
             <h4 className="text-xl font-semibold">Takeaways</h4>
             <p className="text-gray-600">
-              AL is powerful and can be used to speed up workflows and come up
+              AI is powerful and can be used to speed up workflows aswell as come up
               with clever ideas, but it still very much requires human oversight
               to ensure code quality.
             </p>
