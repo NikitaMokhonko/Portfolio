@@ -97,8 +97,8 @@ function RouteComponent() {
 
             <h4 className="text-xl font-semibold">Takeaways</h4>
             <p className="text-gray-600">
-              Small, thoughtful details improve conversion and user confidence —
-              focus on clarity and speed.
+              Sometimes less is more, and a simple, focused design can be more
+              effective than a complex one. 
             </p>
           </div>
         </section>
