@@ -95,32 +95,33 @@ function RouteComponent() {
           <div className="space-y-4">
             <h4 className="text-xl font-semibold">Problem</h4>
             <p className="text-gray-600">
-              The client needed a simple, fast way for users to contact the
-              company in order to sell items. The UI/UX had to be minimal,
-              trustworthy and accessible across all devices.
+              We wanted to build something using AI, that also integrated AI.
+              The team came up with many good ideas, and all of them had quite a
+              similar theme, so we decided to combine them all into this
+              project.
             </p>
 
             <h4 className="text-xl font-semibold">Solution</h4>
             <p className="text-gray-600">
-              A clean transactional UI with focused actions, clear hierarchy and
-              micro-interactions that reinforce trust. Emphasis on performance,
-              responsive images and concise flows.
+              A full-stack platform that uses AI to help users discover and
+              create content through quizzes, movie recommendations and
+              interactive stories. We also built a Boardgame Rule Assistant (BGA) that helps users settle rule disputes while playing boardgames.
             </p>
           </div>
 
           <div className="space-y-4">
             <h4 className="text-xl font-semibold">Contributions</h4>
             <ul className="list-disc list-inside text-gray-600">
-              <li>Clean UI/UX, logo, animations, pages and components</li>
-              <li>Responsible for making the entire site feel cohesive</li>
-              <li>Created and implemented the Movie Picker feature</li>
+              <li>Crafted website theme, layout and design - both mobile and desktop</li>
+              <li>Made Figma designs for every page</li>
+              <li>Created and implemented the Movie Picker feature, aswell as the home page</li>
             </ul>
 
             <h4 className="text-xl font-semibold">Takeaways</h4>
             <p className="text-gray-600">
-              AI is powerful and can be used to speed up workflows aswell as come up
-              with clever ideas, but it still very much requires human oversight
-              to ensure code quality.
+              AI is powerful and can be used to speed up workflows aswell as
+              come up with clever ideas, but it still very much requires human
+              oversight to ensure code quality.
             </p>
           </div>
         </section>
