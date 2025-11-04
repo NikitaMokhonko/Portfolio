@@ -5,7 +5,6 @@ export const Route = createFileRoute("/skinsmart")({
 });
 
 function RouteComponent() {
-
   return (
     <div className="sm:w-[80%] w-[90%] mx-auto min-h-screen bg-white text-black cursor-default">
       <div className="max-w-7xl mx-auto py-10 sm:py-16">
@@ -24,9 +23,9 @@ function RouteComponent() {
             </h1>
             <p className="text-lg text-gray-600 max-w-xl text-center sm:text-left">
               A modern, responsive frontend for a CS2 buy/sell business that was
-              crafted to feel fast, intuitive and polished. Clean typography,
-              careful spacing and focused interactions make the experience feel
-              premium and approachable.
+              designed with speed, clarity, and user focus in mind. It features
+              clean animations, fitting fonts and and a streamlined UI that
+              guides users toward key actions.
             </p>
 
             <div className="flex gap-4 justify-center sm:justify-start my-10 sm:my-6">
