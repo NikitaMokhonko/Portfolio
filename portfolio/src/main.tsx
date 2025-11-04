@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import "./assets/css/zodiak.css";
 import ReactDOM from 'react-dom/client'
 import "./styles.css";
+import { Analytics } from "@vercel/analytics/react";
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
 // Import the generated route tree
@@ -34,8 +35,9 @@ if (rootElement && !rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <RouterProvider router={router} />
-    </StrictMode>,
-  )
+      <Analytics />
+    </StrictMode>
+  );
 }
 
 // If you want to start measuring performance in your app, pass a function
