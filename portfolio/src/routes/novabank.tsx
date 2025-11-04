@@ -22,9 +22,9 @@ function RouteComponent() {
               Nova Bank
             </h1>
             <p className="text-lg text-gray-600 max-w-xl text-center sm:text-left">
-              A clean, secure full-stack banking app built for clarity and trust
-              by a team of 11. Focused on a modern feeling, clear buttons and
-              minimalistic components to feel premium and seamless.
+              A clean, secure full-stack mock banking app built for clarity and
+              trust by a team of 11. Focused on a modern feeling, clear buttons
+              and minimalistic components to feel premium and seamless.
             </p>
 
             <div className="flex gap-4 justify-center sm:justify-start my-10 sm:my-6">
@@ -58,8 +58,8 @@ function RouteComponent() {
               <div>
                 <h4 className="font-semibold text-gray-900">Highlights</h4>
                 <ul className="list-disc list-inside">
-                  <li>Marquee & animations for dynamism</li>
-                  <li>Clean and robust admin panel</li>
+                  <li>Clean UI/UX that is easy to navigate</li>
+                  <li>Robust and streamlined admin panel</li>
                 </ul>
               </div>
               <div>
@@ -109,10 +109,10 @@ function RouteComponent() {
 
             <h4 className="text-xl font-semibold">Solution</h4>
             <p className="text-gray-600">
-              A clean and modern UI/UX that doesn't overwhelm the user and makes
-              it easy to navigate the app. Clear symbols, focus on colors and a
-              minimalistic design language help in making the experience sleek
-              and effortless.
+              A clean and modern banking app with a UI/UX that doesn't overwhelm
+              the user and makes it easy to navigate the app. Clear symbols,
+              focus on colors and a minimalistic design language help in making
+              the experience sleek and effortless.
             </p>
           </div>
 
@@ -126,8 +126,9 @@ function RouteComponent() {
 
             <h4 className="text-xl font-semibold">Takeaways</h4>
             <p className="text-gray-600">
-              This project really made me love UI/UX, and made me realize that a
-              minimal aproach can often be the most effective.
+              This project really made me dive deep into UI/UX. I did a lot of research
+              on what makes a banking app feel trustworthy and secure, and how to
+              balance that with a modern design. I also surveyed a lot of people to figure out the optimal user flow.
             </p>
           </div>
         </section>
