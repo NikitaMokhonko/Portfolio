@@ -87,7 +87,7 @@ function App() {
           <img
             src="profile.jpg"
             alt="Profile Picture"
-            className="mt-25 mr-10 h-100 w-100 border shadow-xl hover:rotate-z-5 duration-500 hidden sm:block"
+            className="mt-25 mr-10 sm: h-80 sm:w-80 2xl:h-100 2xl:w-100 border shadow-xl hover:rotate-z-5 duration-500 hidden sm:block"
           />
         </div>
       </div>
