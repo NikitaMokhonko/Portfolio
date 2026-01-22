@@ -26,7 +26,7 @@ function RouteComponent() {
                 href="https://www.linkedin.com/in/nikitamokhonko/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white"
+                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white hover:scale-105 duration-500"
               >
                 <div className="p-3 rounded-lg bg-[#0A66C2] from-pink-500 to-yellow-400 text-white">
                   <SiLinkedin size={28} />
@@ -40,7 +40,7 @@ function RouteComponent() {
                 href="https://instagram.com/nikitamokhonko"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white"
+                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white hover:scale-105 duration-500"
               >
                 <div className="p-3 rounded-lg bg-linear-to-b from-pink-500 to-[#feda75] text-white">
                   <SiInstagram size={28} />
@@ -56,7 +56,7 @@ function RouteComponent() {
                 href="https://github.com/nikitamokhonko"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white"
+                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white hover:scale-105 duration-500"
               >
                 <div className="p-3 rounded-lg bg-gray-900 text-white">
                   <SiGithub size={28} />
@@ -70,7 +70,7 @@ function RouteComponent() {
               </a>
               <a
                 href="mailto:nikitamokhonko@gmail.com"
-                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white"
+                className="contact-card min-w-70 flex items-center gap-4 px-5 py-5 rounded-2xl border border-gray-100 bg-white shadow-sm no-underline hover:bg-white hover:scale-105 duration-500"
               >
                 <div className="p-3 rounded-lg bg-blue-500 text-white">
                   <HiOutlineMail size={26} />
