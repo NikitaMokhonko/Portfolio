@@ -133,7 +133,7 @@ function App() {
                   The site features a sleek, modern interface, clear
                   presentation of contact options, and a layout optimized for
                   quick navigation."
-            img="Skinsmart-picture.png"
+            img="Skinsmart-picture.jpg"
             to="/skinsmart"
           />
           <ProjectCard

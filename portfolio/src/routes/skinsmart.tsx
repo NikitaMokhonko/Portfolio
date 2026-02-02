@@ -12,7 +12,7 @@ function RouteComponent() {
         <section className="grid md:grid-cols-2 gap-12 items-center">
           <div className="overflow-hidden shadow-lg border border-gray-100">
             <img
-              src="Skinsmart-picture.png"
+              src="Skinsmart-picture.jpg"
               alt="SkinSmart preview"
               className="w-full sm:h-96 object-fill block"
             />
