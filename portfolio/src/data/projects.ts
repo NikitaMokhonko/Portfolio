@@ -478,5 +478,3 @@ export const projectBySlug = (slug: string) =>
 
 export const featuredProjects = projects.filter((project) => project.featured);
 
-export const projectKinds = ["All", "Client", "Team", "Personal"] as const;
-export type ProjectKind = (typeof projectKinds)[number];

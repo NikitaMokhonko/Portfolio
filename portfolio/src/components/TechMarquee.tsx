@@ -15,14 +15,16 @@ export default function TechMarquee() {
       className="marquee relative overflow-hidden py-2"
       style={{ "--marquee-duration": "48s" } as CSSProperties}
     >
-      {/* Fade the edges into the page background rather than cutting hard */}
+      {/* Fade the edges into the page background rather than cutting hard.
+          Narrow on a phone: at 40rem-wide fades two thirds of a 390px screen
+          would be under the gradient. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-bg via-bg to-transparent sm:w-40"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-bg via-bg to-transparent sm:w-40"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-bg via-bg to-transparent sm:w-40"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-bg via-bg to-transparent sm:w-40"
       />
 
       {/* No chips: at this size the names read as typography, and the
@@ -32,7 +34,7 @@ export default function TechMarquee() {
           <li
             key={`${item.name}-${i}`}
             aria-hidden={i >= stack.length ? "true" : undefined}
-            className="group flex shrink-0 items-center gap-3.5 border-l border-line px-8"
+            className="group flex shrink-0 items-center gap-3.5 border-l border-line px-6 sm:px-8"
           >
             <item.Icon
               className="text-lg opacity-70 transition-all duration-500 group-hover:opacity-100"

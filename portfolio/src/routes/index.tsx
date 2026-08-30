@@ -128,8 +128,10 @@ function Toolkit() {
         <SectionRule index="02" label="Toolkit" />
         <Reveal className="mt-14">
           {/* Wrapper, not the Reveal itself: a scroll-driven animation with
-              `both` fill would hold the reveal's entry state hostage. */}
-          <div className="sd-depart">
+              `both` fill would hold the reveal's entry state hostage.
+              -mx-5 cancels the shell's 1.25rem phone gutter so the marquee
+              runs off both edges; from sm up it sits back inside. */}
+          <div className="sd-depart -mx-5 sm:mx-0">
             <TechMarquee />
           </div>
         </Reveal>

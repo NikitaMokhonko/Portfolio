@@ -168,14 +168,11 @@ export default function Header() {
               tabIndex={open ? 0 : -1}
               aria-current={isActive(item.to) ? "page" : undefined}
               style={{ transitionDelay: `${open ? i * 60 + 60 : 0}ms` }}
-              className={`flex items-center justify-between border-b border-line py-4 font-display text-2xl transition-all duration-500 last:border-b-0 ${
+              className={`block border-b border-line py-4 font-display text-2xl transition-all duration-500 last:border-b-0 ${
                 open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
               } ${isActive(item.to) ? "text-accent" : "text-ink"}`}
             >
               {item.label}
-              <span aria-hidden="true" className="text-muted">
-                ↗
-              </span>
             </Link>
           ))}
         </nav>
