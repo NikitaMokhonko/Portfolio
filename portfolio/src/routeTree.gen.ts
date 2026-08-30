@@ -17,7 +17,9 @@ import { Route as NovabankRouteImport } from './routes/novabank'
 import { Route as HomeEntertainmentRouteImport } from './routes/home-entertainment'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AiAssessmentRouteImport } from './routes/ai-assessment'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkSlugRouteImport } from './routes/work.$slug'
 
 const SweethouseRoute = SweethouseRouteImport.update({
   id: '/sweethouse',
@@ -59,14 +61,25 @@ const AiAssessmentRoute = AiAssessmentRouteImport.update({
   path: '/ai-assessment',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkSlugRoute = WorkSlugRouteImport.update({
+  id: '/work/$slug',
+  path: '/work/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
   '/home-entertainment': typeof HomeEntertainmentRoute
@@ -75,9 +88,11 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/skinsmart': typeof SkinsmartRoute
   '/sweethouse': typeof SweethouseRoute
+  '/work/$slug': typeof WorkSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
   '/home-entertainment': typeof HomeEntertainmentRoute
@@ -86,10 +101,12 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/skinsmart': typeof SkinsmartRoute
   '/sweethouse': typeof SweethouseRoute
+  '/work/$slug': typeof WorkSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ai-assessment': typeof AiAssessmentRoute
   '/contact': typeof ContactRoute
   '/home-entertainment': typeof HomeEntertainmentRoute
@@ -98,11 +115,13 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/skinsmart': typeof SkinsmartRoute
   '/sweethouse': typeof SweethouseRoute
+  '/work/$slug': typeof WorkSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/ai-assessment'
     | '/contact'
     | '/home-entertainment'
@@ -111,9 +130,11 @@ export interface FileRouteTypes {
     | '/projects'
     | '/skinsmart'
     | '/sweethouse'
+    | '/work/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/ai-assessment'
     | '/contact'
     | '/home-entertainment'
@@ -122,9 +143,11 @@ export interface FileRouteTypes {
     | '/projects'
     | '/skinsmart'
     | '/sweethouse'
+    | '/work/$slug'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/ai-assessment'
     | '/contact'
     | '/home-entertainment'
@@ -133,10 +156,12 @@ export interface FileRouteTypes {
     | '/projects'
     | '/skinsmart'
     | '/sweethouse'
+    | '/work/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AiAssessmentRoute: typeof AiAssessmentRoute
   ContactRoute: typeof ContactRoute
   HomeEntertainmentRoute: typeof HomeEntertainmentRoute
@@ -145,6 +170,7 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   SkinsmartRoute: typeof SkinsmartRoute
   SweethouseRoute: typeof SweethouseRoute
+  WorkSlugRoute: typeof WorkSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -205,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AiAssessmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -212,11 +245,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/$slug': {
+      id: '/work/$slug'
+      path: '/work/$slug'
+      fullPath: '/work/$slug'
+      preLoaderRoute: typeof WorkSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AiAssessmentRoute: AiAssessmentRoute,
   ContactRoute: ContactRoute,
   HomeEntertainmentRoute: HomeEntertainmentRoute,
@@ -225,6 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   SkinsmartRoute: SkinsmartRoute,
   SweethouseRoute: SweethouseRoute,
+  WorkSlugRoute: WorkSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

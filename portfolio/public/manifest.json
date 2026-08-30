@@ -3,23 +3,19 @@
   "name": "Nikita Mokhonko Portfolio",
   "icons": [
     {
-      "src": "nm.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "nm.png",
+      "src": "/nm.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "nm.png",
+      "src": "/nm.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#f7f6f2",
+  "background_color": "#f7f6f2",
+  "description": "Portfolio of Nikita Mokhonko, frontend and UI/UX engineer in Stockholm."
 }

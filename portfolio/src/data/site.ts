@@ -1,0 +1,83 @@
+import {
+  DiGit,
+  DiJava,
+  DiJavascript,
+  SiAmazon,
+  SiCss3,
+  SiDocker,
+  SiFigma,
+  SiGooglecloud,
+  SiHtml5,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+  SiSpringboot,
+  SiApachekafka,
+  SiKubernetes,
+  SiCloudflare,
+  SiVitest,
+  SiOpenai,
+  SiAdobephotoshop,
+} from "@/components/Icons";
+
+export const site = {
+  name: "Nikita Mokhonko",
+  role: "Interface designer and full-stack engineer",
+  title: "Frontend Lead",
+  location: "Stockholm",
+  email: "nikitamokhonko@gmail.com",
+  links: {
+    linkedin: "https://www.linkedin.com/in/nikitamokhonko/",
+    github: "https://github.com/nikitamokhonko",
+    instagram: "https://instagram.com/nikitamokhonko",
+  },
+} as const;
+
+export const capabilities = [
+  {
+    title: "Interface design",
+    body: "Type, colour and layout systems. Figma through to production.",
+  },
+  {
+    title: "Frontend engineering",
+    body: "React and TypeScript, with performance as a design constraint.",
+  },
+  {
+    title: "Accessibility",
+    body: "Keyboard paths, semantics and contrast, from the first commit.",
+  },
+  {
+    title: "Full stack",
+    body: "Java, Spring Boot, PostgreSQL and cloud when a team needs it.",
+  },
+];
+
+export const stack = [
+  { Icon: SiReact, name: "React", color: "#61DAFB" },
+  { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
+  { Icon: SiTailwindcss, name: "Tailwind", color: "#38B2AC" },
+  { Icon: SiFigma, name: "Figma", color: "#F24E1E" },
+  { Icon: DiJavascript, name: "JavaScript", color: "#F7DF1E" },
+  { Icon: SiHtml5, name: "HTML5", color: "#E34F26" },
+  { Icon: SiCss3, name: "CSS3", color: "#1572B6" },
+  { Icon: SiVite, name: "Vite", color: "#646CFF" },
+  { Icon: DiJava, name: "Java", color: "#E76F00" },
+  { Icon: SiPython, name: "Python", color: "#3776AB" },
+  { Icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
+  { Icon: SiDocker, name: "Docker", color: "#2496ED" },
+  { Icon: DiGit, name: "Git", color: "#F05032" },
+  { Icon: SiGooglecloud, name: "Google Cloud", color: "#4285F4" },
+  { Icon: SiAmazon, name: "AWS", color: "#FF9900" },
+  { Icon: SiVercel, name: "Vercel", color: "#888888" },
+  { Icon: SiSpringboot, name: "Spring Boot", color: "#6DB33F" },
+  { Icon: SiApachekafka, name: "Kafka", color: "#8E8E8E" },
+  { Icon: SiKubernetes, name: "Kubernetes", color: "#326CE5" },
+  { Icon: SiCloudflare, name: "Cloudflare", color: "#F38020" },
+  { Icon: SiVitest, name: "Vitest", color: "#6E9F18" },
+  { Icon: SiOpenai, name: "OpenAI", color: "#9A9A9A" },
+  { Icon: SiAdobephotoshop, name: "Photoshop", color: "#31A8FF" },
+];

@@ -1,170 +1,183 @@
-import { createFileRoute } from "@tanstack/react-router";
-import Ribbons from "@/components/Ribbon";
-import RotatingText from "@/components/RotatingText";
-import { useNavigate } from "@tanstack/react-router";
-import ProjectCard from "@/components/ProjectCard";
-import {
-  SiReact,
-  SiTypescript,
-  SiTailwindcss,
-  SiDocker,
-  SiPostgresql,
-  SiPython,
-  SiFigma,
-  SiVercel,
-  SiHtml5,
-  SiAmazon,
-  SiGooglecloud,
-  SiCss3,
-  DiJavascript,
-  DiJava,
-  DiGit,
-  SiVite,
-} from "@/components/Icons";
-import TechDeck from "@/components/TechDeck";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import type { CSSProperties } from "react";
+import Reveal from "@/components/Reveal";
+import SectionRule from "@/components/SectionRule";
+import TechMarquee from "@/components/TechMarquee";
+import WorkShowcase from "@/components/WorkShowcase";
+import { site } from "@/data/site";
+import { featuredProjects, projects } from "@/data/projects";
+import { usePageMeta } from "@/lib/usePageMeta";
 
-export const Route = createFileRoute("/")({
-  component: App,
-});
+export const Route = createFileRoute("/")({ component: Home });
 
-function App() {
-  const navigate = useNavigate();
+function Home() {
+  usePageMeta(
+    site.role,
+    "Nikita Mokhonko is an interface designer and full-stack engineer in Stockholm. Selected work and case studies.",
+  );
 
-  const techItems = [
-    { Icon: SiReact, name: "React", color: "#61DAFB" },
-    { Icon: SiHtml5, name: "HTML5", color: "#E34F26" },
-    { Icon: SiCss3, name: "CSS3", color: "#1572B6" },
-    { Icon: SiTailwindcss, name: "Tailwind", color: "#38B2AC" },
-    { Icon: DiJavascript, name: "JavaScript", color: "#F7DF1E" },
-    { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
-    { Icon: SiVite, name: "Vite", color: "#646CFF" },
-    { Icon: SiFigma, name: "Figma", color: "#F24E1E" },
-    { Icon: DiJava, name: "Java", color: "#007396" },
-    { Icon: SiPython, name: "Python", color: "#3776AB" },
-    { Icon: SiDocker, name: "Docker", color: "#2496ED" },
-    { Icon: SiPostgresql, name: "PostgreSQL", color: "#336791" },
-    { Icon: DiGit, name: "Git", color: "#F05032" },
-    { Icon: SiVercel, name: "Vercel", color: "#000000" },
-    { Icon: SiAmazon, name: "AWS", color: "#FF9900" },
-    { Icon: SiGooglecloud, name: "GCP", color: "#4285F4" },
+  return (
+    <>
+      <Hero />
+      <Work />
+      <Toolkit />
+      <Closing />
+    </>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="hero-depart shell flex min-h-[calc(100svh-5rem)] flex-col pb-10 pt-6">
+      {/* my-auto on the block, not justify-center on the section, so the free
+          space splits above and below it and the bottom bar stays pinned. */}
+      <div className="my-auto py-12">
+        {/* Sized a step below display-xl: three lines at that scale would
+            overwhelm the viewport and wrap on narrow screens. */}
+        <h1 className="font-display text-[clamp(2rem,1rem+5vw,5rem)] leading-[1.02] tracking-[-0.03em]">
+          <span
+            className="mask-line"
+            style={{ "--mask-delay": "80ms" } as CSSProperties}
+          >
+            <span>Hi, I&rsquo;m Nikita,</span>
+          </span>{" "}
+          <span
+            className="mask-line"
+            style={{ "--mask-delay": "200ms" } as CSSProperties}
+          >
+            <span>an interface designer</span>
+          </span>{" "}
+          <span
+            className="mask-line"
+            style={{ "--mask-delay": "320ms" } as CSSProperties}
+          >
+            <span>
+              and <span className="whitespace-nowrap">full-stack</span>{" "}
+              engineer<span className="text-accent">.</span>
+            </span>
+          </span>
+        </h1>
+
+        <Reveal delay={460}>
+          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <Link to="/projects" className="btn-primary group">
+              <span className="relative z-10">See the work</span>
+              <span
+                aria-hidden="true"
+                className="relative z-10 transition-transform duration-500 ease-out group-hover:translate-x-1"
+              >
+                &#8594;
+              </span>
+            </Link>
+            <Link
+              to="/contact"
+              className="link-line text-sm text-ink-soft transition-colors duration-500 hover:text-ink"
+            >
+              Get in touch
+            </Link>
+          </div>
+        </Reveal>
+      </div>
+
+      <Reveal delay={640}>
+        <div className="flex items-end justify-between gap-6 border-t border-line pt-5">
+          <div
+            aria-hidden="true"
+            className="scroll-cue hidden items-center gap-4 sm:flex"
+          >
+            <span className="block h-8 w-px bg-line-strong" />
+            <span className="eyebrow">Scroll</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <img
+              src="/profile.jpg"
+              alt={site.name}
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-full border border-line object-cover"
+            />
+            <span className="text-sm leading-tight text-ink-soft">
+              {site.name}
+              <span className="block text-muted">{site.title}</span>
+            </span>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function Work() {
+  return (
+    <section className="shell pb-10 sm:pb-14">
+      <SectionRule
+        index="01"
+        label="Case studies"
+        action={{ to: "/projects", label: `All ${projects.length} projects` }}
+      />
+      <WorkShowcase projects={featuredProjects} />
+    </section>
+  );
+}
+
+function Toolkit() {
+  return (
+    <section className="pb-24 sm:pb-32">
+      <div className="shell">
+        <SectionRule index="02" label="Toolkit" />
+        <Reveal className="mt-14">
+          {/* Wrapper, not the Reveal itself: a scroll-driven animation with
+              `both` fill would hold the reveal's entry state hostage. */}
+          <div className="sd-depart">
+            <TechMarquee />
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Closing() {
+  const channels = [
+    { label: "Email", value: site.email, href: `mailto:${site.email}` },
+    {
+      label: "LinkedIn",
+      value: "in/nikitamokhonko",
+      href: site.links.linkedin,
+    },
+    { label: "GitHub", value: "nikitamokhonko", href: site.links.github },
   ];
 
   return (
-    <div className="sm:w-[80%] w-[90%] min-h-screen cursor-default mx-auto mt-10 sm:text-left text-center sm:mt-0">
-      <div className="w-full flex justify-between animate-gentle-pop">
-        <div className="sm:pt-30 sm:pl-10">
-          <h1 className="text-[46px] leading-14">
-            Turning Your Imagination Into{" "}
-            <RotatingText
-              texts={["Reality", "Success", "A Business"]}
-              mainClassName="justify-center sm:justify-start"
-              staggerFrom={"last"}
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-120%" }}
-              staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-              rotationInterval={5000}
-            />
-          </h1>
-          <h2 className="pt-8 text-[20px]">
-            Hi! I'm Nikita, a full stack developer with a passion for design.
-          </h2>
-          <h3 className="pt-5 text-[18px] text-gray-700 max-w-2xl">
-            I love crafting seamless digital experiences that blend creativity
-            with clean, scalable and efficient code. Whether it’s building
-            full-stack web apps, designing intuitive and modern interfaces, or
-            bringing bold ideas to life - I’m all about making technology feel
-            human.
-          </h3>
-          <h3 className="pt-3 text-[18px] text-gray-700 max-w-2xl">
-            Currently, I’m focused on full stack development using React,
-            TypeScript, and Java with Spring Boot. Let’s build something amazing
-            together!
-          </h3>
-        </div>
-        <div>
-          <img
-            src="profile.jpg"
-            alt="Profile Picture"
-            className="mt-25 mr-10 sm: h-80 sm:w-80 2xl:h-100 2xl:w-100 border shadow-xl hover:rotate-z-5 duration-500 hidden sm:block"
-          />
-        </div>
-      </div>
-      <div className="mt-20 sm:mt-30">
-        <div className="flex sm:px-10 justify-center sm:justify-start">
-          <h1 className="text-3xl">Tech Stack</h1>
-        </div>
-        <div className="hidden sm:block mx-10 mt-16">
-          <TechDeck items={techItems} />
-        </div>
-        <div className="sm:hidden grid grid-cols-4 gap-10 sm:gap-0 py-4 sm:py-0 mt-10 sm:mt-0 text-center">
-          {techItems.map((item) => (
-            <div
-              key={item.name}
-              className="flex flex-col items-center justify-center"
+    <section className="shell pb-28 sm:pb-36">
+      <SectionRule index="03" label="Contact" />
+
+      <ul className="sd-lift reveal mt-12">
+        {channels.map((channel) => (
+          <li key={channel.label}>
+            <a
+              href={channel.href}
+              target={channel.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              className="group flex items-baseline gap-6 border-b border-line py-5 transition-colors duration-500 first:border-t hover:border-line-strong"
             >
-              <item.Icon
-                className="text-4xl"
-                style={{ color: item.color ?? "black" }}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-20 sm:mt-40">
-        <div className="flex justify-center sm:justify-between sm:px-10">
-          <h1 className="text-3xl">Projects</h1>
-          <button
-            onClick={() => navigate({ to: "/projects" })}
-            className="hidden sm:block group flex-col items-start cursor-pointer bg-transparent border-0 p-0"
-            aria-label="Projects"
-            type="button"
-          >
-            <span className="pointer-events-none">View All</span>
-            <span className="block h-px bg-black w-full transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100" />
-          </button>
-        </div>
-        <div className="mt-14 sm:px-10 flex flex-col sm:flex-row space-y-12 sm:space-y-0 justify-between mb-20">
-          <ProjectCard
-            title="SkinSmart"
-            description="Responsive frontend website built for a CS2 business, designed
-                  to let users easily contact the company to sell their items.
-                  The site features a sleek, modern interface, clear
-                  presentation of contact options, and a layout optimized for
-                  quick navigation."
-            img="Skinsmart-picture.jpg"
-            to="/skinsmart"
-          />
-          <ProjectCard
-            title="Nova Bank"
-            description="Fully functioning mock banking application built in a team of
-                  11 people, with features such as log in, dashboard, transfers
-                  between accounts and users, transaction history with
-                  AI-powered search, loans and a fully robust admin page."
-            img="Novabank-picture.png"
-            to="/novabank"
-          />
-          <ProjectCard
-            title="Sweethouse"
-            description="Full-stack web application for a French pastry business,
-                  designed to showcase products and provide a seamless browsing
-                  experience for visitors. The site features responsive layouts,
-                  an intuitive UI/UX, and integrated click tracking through
-                  Kafka to gather insights on user interactions."
-            img="Sweethouse-picture.png"
-            to="/sweethouse"
-          />
-        </div>
-      </div>
-      <Ribbons
-        baseThickness={10}
-        colors={["#000000"]}
-        speedMultiplier={0.4}
-        maxAge={500}
-        enableFade={true}
-        enableShaderEffect={false}
-      />
-    </div>
+              <span className="w-24 shrink-0 text-sm text-muted">
+                {channel.label}
+              </span>
+              <span className="min-w-0 flex-1 truncate text-ink-soft transition-colors duration-500 group-hover:text-ink">
+                {channel.value}
+              </span>
+              <span
+                aria-hidden="true"
+                className="shrink-0 text-muted transition-all duration-500 group-hover:translate-x-1 group-hover:text-accent"
+              >
+                &#8599;
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

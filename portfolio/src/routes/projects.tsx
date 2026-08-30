@@ -1,68 +1,83 @@
-import ProjectCard from "@/components/ProjectCard";
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import ProjectCard from "@/components/ProjectCard";
+import Reveal from "@/components/Reveal";
+import { projectKinds, projects, type ProjectKind } from "@/data/projects";
+import { usePageMeta } from "@/lib/usePageMeta";
+import { useReveal } from "@/lib/useReveal";
 
-export const Route = createFileRoute("/projects")({
-  component: RouteComponent,
-});
+export const Route = createFileRoute("/projects")({ component: Work });
 
-function RouteComponent() {
+function Work() {
+  const [filter, setFilter] = useState<ProjectKind>("All");
+
+  usePageMeta(
+    "Work",
+    "Projects by Nikita Mokhonko: client sites, product teams and personal work.",
+  );
+
+  // Filtered-in cards mount fresh with `.reveal`; re-scan so they animate in
+  // instead of staying at opacity 0.
+  useReveal(filter);
+
+  const visible =
+    filter === "All"
+      ? projects
+      : projects.filter((project) => project.kind === filter);
+
   return (
-    <div className="sm:max-w-[75%] max-w-[90%] mx-auto bg-white text-black sm:min-h-screen">
-      <div className="mx-auto px-6 pt-20">
-        <header className="text-center mb-10">
-          <h1 className="text-4xl sm:text-5xl">My Projects</h1>
-        </header>
+    <div className="shell py-14 sm:py-20">
+      <h1 className="display-lg max-w-4xl">
+        Client work, team projects, and things I built for myself.
+      </h1>
+
+      <div
+        role="group"
+        aria-label="Filter projects by type"
+        className="mt-10 flex flex-wrap gap-2 border-b border-line pb-8"
+      >
+        {projectKinds.map((kind) => {
+          const active = filter === kind;
+          const count =
+            kind === "All"
+              ? projects.length
+              : projects.filter((p) => p.kind === kind).length;
+          return (
+            <button
+              key={kind}
+              type="button"
+              onClick={() => setFilter(kind)}
+              aria-pressed={active}
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors duration-300 ${
+                active
+                  ? "border-ink bg-ink text-bg"
+                  : "border-line text-ink-soft hover:border-line-strong hover:text-ink"
+              }`}
+            >
+              {kind}
+              <span
+                aria-hidden="true"
+                className={active ? "text-bg/60" : "text-muted"}
+              >
+                {count}
+              </span>
+            </button>
+          );
+        })}
       </div>
-      <div className="mt-20 sm:px-10 flex flex-col sm:flex-row space-y-10 sm:space-y-0 justify-between sm:mb-20 animate-gentle-pop">
-        <ProjectCard
-          title="SkinSmart"
-          description="Responsive frontend website built for a CS2 business, designed
-                    to let users easily contact the company to sell their items.
-                    The site features a sleek, modern interface, clear
-                    presentation of contact options, and a layout optimized for
-                    quick navigation."
-          img="Skinsmart-picture.jpg"
-          to="/skinsmart"
-        />
-        <ProjectCard
-          title="Nova Bank"
-          description="Fully functioning mock banking application built in a team of
-                    11 people, with features such as log in, dashboard, transfers
-                    between accounts and users, transaction history with
-                    AI-powered search, loans and a fully robust admin page."
-          img="Novabank-picture.png"
-          to="/novabank"
-        />
-        <ProjectCard
-          title="Sweethouse"
-          description="Full-stack web application for a French pastry business,
-                    designed to showcase products and provide a seamless browsing
-                    experience for visitors. The site features responsive layouts,
-                    an intuitive UI/UX, and integrated click tracking through
-                    Kafka to gather insights on user interactions."
-          img="Sweethouse-picture.png"
-          to="/sweethouse"
-        />
-      </div>
-      <div className="mt-14 sm:px-10 flex flex-col sm:flex-row space-y-10 sm:space-y-0 justify-between mb-20 animate-gentle-pop">
-        <ProjectCard
-          title="Home EntertAInment System"
-          description="Full-stack AI-powered entertainment platform designed to help users discover and interact with personalized content such as quizzes, movies, and stories through a sleek and responsive interface."
-          img="he-picture.png"
-          to="/home-entertainment"
-        />
-        <ProjectCard
-          title="</Salt> AI Assessment"
-          description="Full-stack web app built for </Salt> by an 8-person team. Provides clients with an AI-maturity assessment via a dynamic questionnaire, with a modern admin UI and a secure backend for user data."
-          img="AI-assessment-picture.png"
-          to="/ai-assessment"
-        />
-        <ProjectCard
-          title="Portfolio Website"
-          description="This website! A personal portfolio site built to showcase my projects and skills, featuring a clean design, smooth animations, and responsive layouts for a great viewing experience across all devices."
-          img="portfolio-pic.png"
-          to="/portfolio"
-        />
+
+      <p aria-live="polite" className="sr-only">
+        {visible.length} projects shown
+      </p>
+
+      <div className="mt-12 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+        {visible.map((project, i) => (
+          // Keying on filter restarts the reveal transition when the list
+          // swaps, so filtered-in cards animate rather than pop.
+          <Reveal key={`${filter}-${project.slug}`} delay={(i % 3) * 80}>
+            <ProjectCard project={project} index={i} headingLevel={2} />
+          </Reveal>
+        ))}
       </div>
     </div>
   );

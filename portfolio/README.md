@@ -1,290 +1,118 @@
-Welcome to your new TanStack app! 
+# Portfolio — Nikita Mokhonko
 
-# Getting Started
+Personal site: selected work, case studies and experience.
+Frontend & UI/UX engineer, Stockholm.
 
-To run this application:
+## Stack
+
+| | |
+|---|---|
+| Framework | React 19 + Vite |
+| Routing | TanStack Router, file-based, with auto code splitting |
+| Styling | Tailwind CSS v4 — tokens in `src/styles.css` |
+| Fonts | Zodiak Variable (display, self-hosted) + Inter (text, Google Fonts) |
+| Motion | Scroll-driven CSS animations (`animation-timeline: view()`), IntersectionObserver reveals, View Transitions; `ogl` for the cursor ribbon |
+| Hosting | Vercel |
+
+## Commands
 
 ```bash
 npm install
-npm run start
+npm run dev       # http://localhost:3000
+npm run build     # vite build + tsc
+npm run serve     # preview the production build
+npm run test      # vitest
+npm run a11y      # axe-core WCAG 2.2 AA audit, both themes, two viewports
+npm run audit     # links, metadata, heading order, images, reduced motion
 ```
 
-# Building For Production
-
-To build this application for production:
+Both audit scripts run against a served build and exit non-zero on failure:
 
 ```bash
-npm run build
+npm run build && npm run serve
+BASE=http://localhost:4173 npm run a11y
+BASE=http://localhost:4173 npm run audit
 ```
 
-## Testing
+## Structure
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
-
-```bash
-npm run test
+```
+src/
+  data/
+    projects.ts     Every project: copy, meta, gallery, links. One source of truth.
+    experience.ts   Roles and languages
+    site.ts         Name, contact, capabilities, tech stack
+  lib/
+    theme.ts        Theme hook; pairs with the pre-paint script in index.html
+    useReveal.ts    Page-level IntersectionObserver for scroll reveals
+  components/       Header, Footer, ProjectCard, Lightbox, TechMarquee, …
+  routes/
+    __root.tsx      Shell: skip link, header, footer, ribbon
+    index.tsx       Home
+    projects.tsx    Work index with type filters
+    work.$slug.tsx  Case study, rendered from data/projects.ts
+    about.tsx       Experience timeline
+    contact.tsx
+    <legacy>.tsx    Old flat URLs (/skinsmart, /novabank, …) redirect to /work/<slug>
 ```
 
-## Styling
+### Theming
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
+Every colour on the site resolves through a CSS custom property defined in
+`src/styles.css` — `--bg`, `--surface`, `--ink`, `--line`, `--accent` and so on.
+`:root` holds the light palette; `:root[data-theme="dark"]` overrides the same
+names. Tailwind sees them through `@theme inline`, so `bg-surface` and
+`text-ink` are theme-aware without a single `dark:` variant in the markup.
 
+Switching themes is one attribute flip on `<html>`. An inline script in
+`index.html` resolves the theme before first paint (stored choice, else the OS
+preference) so there's no flash of the wrong palette.
 
+To add or change a colour, edit **both** blocks in `src/styles.css`. Nothing
+else needs touching.
 
+### Adding a project
 
-## Routing
-This project uses [TanStack Router](https://tanstack.com/router). The initial setup is a file based router. Which means that the routes are managed as files in `src/routes`.
+Append an entry to `projects` in `src/data/projects.ts` and drop the images in
+`public/`. The card, the work index, the filters and the whole case-study page
+are generated from it — there is no per-project component to write.
 
-### Adding A Route
+Set `featured: true` to surface it on the home page. The first featured entry
+renders as the wide hero card.
 
-To add a new route to your application just add another a new file in the `./src/routes` directory.
+### Accessibility
 
-TanStack will automatically generate the content of the route file for you.
+`npm run a11y` runs axe-core over every route in both themes at two viewport
+widths, against `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa`, `wcag22aa` and
+axe best-practice. It exits non-zero on any violation, so it can gate a deploy.
+Point it elsewhere with `BASE=http://localhost:3001 npm run a11y`.
 
-Now that you have two routes you can use a `Link` component to navigate between them.
+Currently zero violations. What the automated pass cannot check, and how it is
+handled here:
 
-### Adding Links
+- **Page titles (2.4.2)** — each route sets its own via `usePageMeta`, and a
+  live region in `__root` announces the new title after client-side navigation.
+- **Focus order (2.4.3)** — the lightbox traps Tab while open and returns focus
+  to the thumbnail that opened it.
+- **Target size (2.5.8)** — nav links sit at 20-23px at their font size, so
+  `.link-line::before` pads the pointer target out to 24px without moving the
+  text or its underline.
+- **Contrast (1.4.3)** — `--muted` is set for the darkest surface it appears
+  on (`--bg-alt`), at 5.11:1. Do not lighten it; muted text runs as small as
+  11px.
+- **Motion (2.3.3)** — see below.
 
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
+### Motion
 
-```tsx
-import { Link } from "@tanstack/react-router";
-```
+Anything with the `reveal` class is picked up by `useReveal` and faded in once
+it enters the viewport. Stagger with `<Reveal delay={120}>`.
 
-Then anywhere in your JSX you can use it like so:
+Every animation — reveals, the marquee, the cursor ribbon — is disabled under `prefers-reduced-motion: reduce`. The ribbon also
+skips coarse pointers and narrow viewports entirely, so phones never build a
+WebGL context.
 
-```tsx
-<Link to="/about">About</Link>
-```
+### Images
 
-This will create a link that will navigate to the `/about` route.
-
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
-
-### Using A Layout
-
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you use the `<Outlet />` component.
-
-Here is an example layout that includes a header:
-
-```tsx
-import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-
-import { Link } from "@tanstack/react-router";
-
-export const Route = createRootRoute({
-  component: () => (
-    <>
-      <header>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-        </nav>
-      </header>
-      <Outlet />
-      <TanStackRouterDevtools />
-    </>
-  ),
-})
-```
-
-The `<TanStackRouterDevtools />` component is not required so you can remove it if you don't want it in your layout.
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
-
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-const peopleRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/people",
-  loader: async () => {
-    const response = await fetch("https://swapi.dev/api/people");
-    return response.json() as Promise<{
-      results: {
-        name: string;
-      }[];
-    }>;
-  },
-  component: () => {
-    const data = peopleRoute.useLoaderData();
-    return (
-      <ul>
-        {data.results.map((person) => (
-          <li key={person.name}>{person.name}</li>
-        ))}
-      </ul>
-    );
-  },
-});
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-### React-Query
-
-React-Query is an excellent addition or alternative to route loading and integrating it into you application is a breeze.
-
-First add your dependencies:
-
-```bash
-npm install @tanstack/react-query @tanstack/react-query-devtools
-```
-
-Next we'll need to create a query client and provider. We recommend putting those in `main.tsx`.
-
-```tsx
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-// ...
-
-const queryClient = new QueryClient();
-
-// ...
-
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement);
-
-  root.render(
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
-  );
-}
-```
-
-You can also add TanStack Query Devtools to the root route (optional).
-
-```tsx
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
-const rootRoute = createRootRoute({
-  component: () => (
-    <>
-      <Outlet />
-      <ReactQueryDevtools buttonPosition="top-right" />
-      <TanStackRouterDevtools />
-    </>
-  ),
-});
-```
-
-Now you can use `useQuery` to fetch your data.
-
-```tsx
-import { useQuery } from "@tanstack/react-query";
-
-import "./App.css";
-
-function App() {
-  const { data } = useQuery({
-    queryKey: ["people"],
-    queryFn: () =>
-      fetch("https://swapi.dev/api/people")
-        .then((res) => res.json())
-        .then((data) => data.results as { name: string }[]),
-    initialData: [],
-  });
-
-  return (
-    <div>
-      <ul>
-        {data.map((person) => (
-          <li key={person.name}>{person.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export default App;
-```
-
-You can find out everything you need to know on how to use React-Query in the [React-Query documentation](https://tanstack.com/query/latest/docs/framework/react/overview).
-
-## State Management
-
-Another common requirement for React applications is state management. There are many options for state management in React. TanStack Store provides a great starting point for your project.
-
-First you need to add TanStack Store as a dependency:
-
-```bash
-npm install @tanstack/store
-```
-
-Now let's create a simple counter in the `src/App.tsx` file as a demonstration.
-
-```tsx
-import { useStore } from "@tanstack/react-store";
-import { Store } from "@tanstack/store";
-import "./App.css";
-
-const countStore = new Store(0);
-
-function App() {
-  const count = useStore(countStore);
-  return (
-    <div>
-      <button onClick={() => countStore.setState((n) => n + 1)}>
-        Increment - {count}
-      </button>
-    </div>
-  );
-}
-
-export default App;
-```
-
-One of the many nice features of TanStack Store is the ability to derive state from other state. That derived state will update when the base state updates.
-
-Let's check this out by doubling the count using derived state.
-
-```tsx
-import { useStore } from "@tanstack/react-store";
-import { Store, Derived } from "@tanstack/store";
-import "./App.css";
-
-const countStore = new Store(0);
-
-const doubledStore = new Derived({
-  fn: () => countStore.state * 2,
-  deps: [countStore],
-});
-doubledStore.mount();
-
-function App() {
-  const count = useStore(countStore);
-  const doubledCount = useStore(doubledStore);
-
-  return (
-    <div>
-      <button onClick={() => countStore.setState((n) => n + 1)}>
-        Increment - {count}
-      </button>
-      <div>Doubled - {doubledCount}</div>
-    </div>
-  );
-}
-
-export default App;
-```
-
-We use the `Derived` class to create a new store that is derived from another store. The `Derived` class has a `mount` method that will start the derived store updating.
-
-Once we've created the derived store we can use it in the `App` component just like we would any other store using the `useStore` hook.
-
-You can find out everything you need to know on how to use TanStack Store in the [TanStack Store documentation](https://tanstack.com/store/latest).
-
-# Demo files
-
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
+Screenshots are JPEG, capped at 1600px wide, quality 82. Nothing on the site
+displays wider than that, and the PNG originals were roughly four times the
+size for no visible gain.

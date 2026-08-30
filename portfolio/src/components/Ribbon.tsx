@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { Renderer, Transform, Vec3, Color, Polyline } from "ogl";
 
 interface RibbonsProps {
@@ -30,10 +30,12 @@ const Ribbons: React.FC<RibbonsProps> = ({
   effectAmplitude = 2,
   backgroundColor = [0, 0, 0, 0],
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (window.innerWidth < 640) return;
+    // Pointer-following decoration: pointless without a fine pointer, and
+    // unwelcome for anyone who asked for less motion.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.matchMedia("(pointer: fine)").matches) return;
     // create a full-viewport host appended to document.body so the canvas
     // isn't constrained by parent stacking contexts
     const host = document.createElement("div");
@@ -45,6 +47,8 @@ const Ribbons: React.FC<RibbonsProps> = ({
     host.style.height = "100vh";
     host.style.pointerEvents = "none"; // allow clicks through the overlay
     host.style.zIndex = "-1"; // place ribbon behind normal page content
+    host.setAttribute("aria-hidden", "true");
+    host.setAttribute("role", "presentation");
     document.body.appendChild(host);
     const container = host;
 
@@ -288,9 +292,9 @@ const Ribbons: React.FC<RibbonsProps> = ({
     backgroundColor,
   ]);
 
-  // keep a ref so the component can be placed anywhere, but the canvas will
-  // actually be appended to document.body
-  return <div ref={containerRef} className="relative w-full h-full" />;
+  // The canvas lives in a host appended to document.body, so this component
+  // renders nothing itself.
+  return null;
 };
 
 export default Ribbons;

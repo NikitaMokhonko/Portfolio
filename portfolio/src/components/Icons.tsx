@@ -19,6 +19,13 @@ export const SiGooglecloud = SiIcons.SiGooglecloud;
 export const SiCss3 = SiIcons.SiCss3;
 export const DiGit = DiIcons.DiGit;
 export const SiVite = SiIcons.SiVite;
+export const SiSpringboot = SiIcons.SiSpringboot;
+export const SiApachekafka = SiIcons.SiApachekafka;
+export const SiKubernetes = SiIcons.SiKubernetes;
+export const SiCloudflare = SiIcons.SiCloudflare;
+export const SiVitest = SiIcons.SiVitest;
+export const SiOpenai = SiIcons.SiOpenai;
+export const SiAdobephotoshop = SiIcons.SiAdobephotoshop;
 
 export const DiJavascript = DiIcons.DiJavascript;
 export const DiJava = DiIcons.DiJava;

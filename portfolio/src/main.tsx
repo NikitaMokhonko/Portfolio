@@ -1,5 +1,4 @@
 import { StrictMode } from 'react'
-import "./assets/css/zodiak.css";
 import ReactDOM from 'react-dom/client'
 import "./styles.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -8,7 +7,6 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
 
-import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
 
 // Create a new router instance
@@ -16,6 +14,9 @@ const router = createRouter({
   routeTree,
   context: {},
   defaultPreload: 'intent',
+  // Morphs the project cover between the work list and its case study.
+  // Browsers without the API navigate normally.
+  defaultViewTransition: true,
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
