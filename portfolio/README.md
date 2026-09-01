@@ -41,7 +41,7 @@ src/
   data/
     projects.ts     Every project: copy, meta, gallery, links. One source of truth.
     experience.ts   Roles and languages
-    site.ts         Name, contact, capabilities, tech stack
+    site.ts         Name, contact, tech stack
   lib/
     theme.ts        Theme hook; pairs with the pre-paint script in index.html
     useReveal.ts    Page-level IntersectionObserver for scroll reveals

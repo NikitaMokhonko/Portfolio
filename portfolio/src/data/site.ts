@@ -37,25 +37,6 @@ export const site = {
   },
 } as const;
 
-export const capabilities = [
-  {
-    title: "Interface design",
-    body: "Type, colour and layout systems. Figma through to production.",
-  },
-  {
-    title: "Frontend engineering",
-    body: "React and TypeScript, with performance as a design constraint.",
-  },
-  {
-    title: "Accessibility",
-    body: "Keyboard paths, semantics and contrast, from the first commit.",
-  },
-  {
-    title: "Full stack",
-    body: "Java, Spring Boot, PostgreSQL and cloud when a team needs it.",
-  },
-];
-
 export const stack = [
   { Icon: SiReact, name: "React", color: "#61DAFB" },
   { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },

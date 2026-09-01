@@ -122,10 +122,12 @@ function Work() {
 
 function Toolkit() {
   return (
-    <section className="pb-24 sm:pb-32">
+    <section className="pb-[4.5rem]">
       <div className="shell">
         <SectionRule label="Toolkit" />
-        <Reveal className="mt-14">
+        {/* Matches the section's bottom padding: the marquee is a single
+            strip, so unequal space above and below reads as misalignment. */}
+        <Reveal className="mt-[4.5rem]">
           {/* Wrapper, not the Reveal itself: a scroll-driven animation with
               `both` fill would hold the reveal's entry state hostage.
               -mx-5 cancels the shell's 1.25rem phone gutter so the marquee

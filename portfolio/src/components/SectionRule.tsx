@@ -21,7 +21,7 @@ export default function SectionRule({ label, action }: Props) {
       {/* Baseline, not items-end: the label and the link are different sizes,
           so bottom-aligning their boxes left the two texts a few px apart. */}
       <div className="flex items-baseline justify-between gap-6 border-t border-line pt-5">
-        <h2 className="font-display text-[clamp(1.5rem,1.15rem+1.1vw,2.125rem)] leading-none tracking-[-0.02em] text-ink">
+        <h2 className="font-display text-[clamp(1.25rem,1.1rem+0.5vw,1.625rem)] leading-none tracking-[-0.02em] text-ink">
           {label}
         </h2>
         {action && (
