@@ -46,7 +46,10 @@ function About() {
 
   return (
     <div className="pb-24">
-      <header className="shell py-14 sm:py-20">
+      {/* pb is deliberately small: the employer row below sits in a band
+          between two rules, and the header's bottom padding is the space
+          under it. At py-20 that was 80px against 25px above. */}
+      <header className="shell pb-7 pt-14 sm:pt-20">
         <h1 className="display-lg max-w-3xl">
           From concept to production.
         </h1>
@@ -59,7 +62,7 @@ function About() {
         </p>
 
         <Reveal delay={120}>
-          <ul className="mt-12 flex flex-wrap items-baseline gap-x-10 gap-y-3 border-t border-line pt-6">
+          <ul className="mt-12 flex flex-wrap items-baseline gap-x-10 gap-y-3 border-t border-line pt-7">
             {employers.map((employer) => (
               <li key={employer.company} className="flex items-baseline gap-2.5">
                 <span className="text-ink">{employer.company}</span>
