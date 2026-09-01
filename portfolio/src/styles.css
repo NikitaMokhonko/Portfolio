@@ -40,8 +40,6 @@
   --muted: #686357;
   --line: #e2ded3;
   --line-strong: #cdc8b9;
-  /* Section numerals. 3.33:1 on --bg — the AA bar for large text. */
-  --numeral: #8f8676;
   --accent: #b3441c;
   --accent-soft: #f2e2da;
   --accent-ink: #ffffff;
@@ -66,7 +64,6 @@
   --muted: #928d81;
   --line: #2a2926;
   --line-strong: #3d3b36;
-  --numeral: #6b665b;
   --accent: #f0764a;
   --accent-soft: #2a1a12;
   --accent-ink: #17160f;
@@ -89,7 +86,6 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
-  --color-numeral: var(--numeral);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);

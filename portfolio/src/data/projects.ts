@@ -176,41 +176,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "nordic-renhus",
-    title: "Nordic Renhus",
-    tagline: "A site for a Swedish construction firm, built to win the call.",
-    intro:
-      "Nordic Renhus does groundwork, renovation and new builds around Stockholm. The site had one job: show the standard of the work and make the enquiry obvious.",
-    year: "2026",
-    role: "Design and build",
-    timeline: "1 week",
-    team: "Solo",
-    kind: "Client",
-    cover: "/renhus-picture.jpg",
-    gallery: ["/renhus-1.jpg", "/renhus-2.jpg"],
-    stack: ["React", "TypeScript", "Tailwind", "Vite", "Vercel"],
-    links: [
-      {
-        label: "View live",
-        href: "https://nordic-renhus.vercel.app/",
-        variant: "primary",
-      },
-      {
-        label: "View repo",
-        href: "https://github.com/NikitaMokhonko/nordic-renhus",
-      },
-    ],
-    context:
-      "A construction firm is judged on finished work, not on copy. Most sites in the trade bury the photography under stock imagery and a service list nobody reads.",
-    approach:
-      "Full-bleed photography of their own projects, a headline that cycles through the services so one screen covers the whole offer, and a single contact route repeated down the page.",
-    did: [
-      "Designed and built the site end to end",
-      "Prepared and compressed the project photography",
-      "Set up the domain and Vercel deployment",
-    ],
-  },
-  {
     slug: "kitafront",
     title: "KitaFront",
     tagline: "My web studio: the brand, the site, the client work.",
@@ -238,7 +203,36 @@ export const projects: Project[] = [
     did: [
       "Brand, logo and the full site design",
       "Pricing model toggle and client showcase",
-      "Client sites under the studio, including Nordic Renhus",
+      "Design and build for the client sites it takes on",
+    ],
+  },
+  {
+    slug: "portfolio",
+    title: "This Portfolio",
+    tagline: "The site you’re reading.",
+    intro:
+      "One set of colour tokens driving both themes, case studies generated from a single typed data file, and motion that switches itself off when you ask it to.",
+    year: "2026",
+    role: "Design and build",
+    timeline: "Ongoing",
+    team: "Solo",
+    kind: "Personal",
+    cover: "/portfolio-pic.jpg",
+    stack: ["React 19", "TypeScript", "TanStack Router", "Tailwind"],
+    links: [
+      {
+        label: "View repo",
+        href: "https://github.com/NikitaMokhonko/Portfolio",
+      },
+    ],
+    context:
+      "A portfolio has to survive being skimmed in ninety seconds, and hold up when the same person opens the source afterwards.",
+    approach:
+      "Editorial structure over decoration. Underneath, colour tokens and one content source keep it maintainable as the work changes.",
+    did: [
+      "Design system: colour, type scale, motion primitives",
+      "Dual theme with no flash on first paint",
+      "Data-driven case studies, accessible throughout",
     ],
   },
   {
@@ -440,35 +434,6 @@ export const projects: Project[] = [
       "Owned the UI/UX and the brand alignment",
       "Designed and built the Form Builder",
       "Built out the admin console",
-    ],
-  },
-  {
-    slug: "portfolio",
-    title: "This Portfolio",
-    tagline: "The site you’re reading.",
-    intro:
-      "One set of colour tokens driving both themes, case studies generated from a single typed data file, and motion that switches itself off when you ask it to.",
-    year: "2026",
-    role: "Design and build",
-    timeline: "Ongoing",
-    team: "Solo",
-    kind: "Personal",
-    cover: "/portfolio-pic.jpg",
-    stack: ["React 19", "TypeScript", "TanStack Router", "Tailwind"],
-    links: [
-      {
-        label: "View repo",
-        href: "https://github.com/NikitaMokhonko/Portfolio",
-      },
-    ],
-    context:
-      "A portfolio has to survive being skimmed in ninety seconds, and hold up when the same person opens the source afterwards.",
-    approach:
-      "Editorial structure over decoration. Underneath, colour tokens and one content source keep it maintainable as the work changes.",
-    did: [
-      "Design system: colour, type scale, motion primitives",
-      "Dual theme with no flash on first paint",
-      "Data-driven case studies, accessible throughout",
     ],
   },
 ];

@@ -5,7 +5,7 @@ import SectionRule from "@/components/SectionRule";
 import TechMarquee from "@/components/TechMarquee";
 import WorkShowcase from "@/components/WorkShowcase";
 import { site } from "@/data/site";
-import { featuredProjects, projects } from "@/data/projects";
+import { featuredProjects } from "@/data/projects";
 import { usePageMeta } from "@/lib/usePageMeta";
 
 export const Route = createFileRoute("/")({ component: Home });
@@ -112,9 +112,8 @@ function Work() {
   return (
     <section className="shell pb-10 sm:pb-14">
       <SectionRule
-        index="01"
         label="Case studies"
-        action={{ to: "/projects", label: `All ${projects.length} projects` }}
+        action={{ to: "/projects", label: "All projects" }}
       />
       <WorkShowcase projects={featuredProjects} />
     </section>
@@ -125,7 +124,7 @@ function Toolkit() {
   return (
     <section className="pb-24 sm:pb-32">
       <div className="shell">
-        <SectionRule index="02" label="Toolkit" />
+        <SectionRule label="Toolkit" />
         <Reveal className="mt-14">
           {/* Wrapper, not the Reveal itself: a scroll-driven animation with
               `both` fill would hold the reveal's entry state hostage.
@@ -153,7 +152,7 @@ function Closing() {
 
   return (
     <section className="shell pb-28 sm:pb-36">
-      <SectionRule index="03" label="Contact" />
+      <SectionRule label="Contact" />
 
       <ul className="sd-lift reveal mt-12">
         {channels.map((channel) => (

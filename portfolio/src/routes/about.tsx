@@ -51,10 +51,11 @@ function About() {
           From concept to production.
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          I work across the whole stack &mdash; design, frontend, backend,
-          infrastructure &mdash; and set the engineering standards on the teams
-          I lead. Lately that has mostly been AI products: LLM integration,
-          agentic workflows and speech recognition.
+          I lead frontend work and set the engineering standards that come
+          with it. Beyond that I&rsquo;m hands-on across the backend, the
+          infrastructure and the deploy. Some of it has been AI product work
+          &mdash; LLM integration, agentic workflows, speech recognition
+          &mdash; and plenty of it hasn&rsquo;t.
         </p>
 
         <Reveal delay={120}>
@@ -72,7 +73,7 @@ function About() {
       </header>
 
       <section className="shell pb-16">
-        <SectionRule index="01" label="Experience" />
+        <SectionRule label="Experience" />
 
         <ol className="mt-2 [&>li:last-child>article]:border-0">
           {experience.map((role, i) => (
@@ -129,7 +130,7 @@ function About() {
       </section>
 
       <section className="shell pb-16">
-        <SectionRule index="02" label="Languages" />
+        <SectionRule label="Languages" />
         <Reveal>
           <ul className="mt-2 flex flex-wrap gap-x-12 gap-y-4 pt-8">
             {languages.map((language) => (
