@@ -109,8 +109,10 @@ function Hero() {
 }
 
 function Work() {
+  // No bottom padding on the section: the showcase list already carries a
+  // 9vh tail, so anything here reads as a second gap.
   return (
-    <section className="shell pb-10 sm:pb-14">
+    <section className="shell">
       <SectionRule
         label="Case studies"
         action={{ to: "/projects", label: "All projects" }}

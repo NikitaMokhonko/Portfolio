@@ -268,41 +268,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "novabank",
-    title: "Nova Bank",
-    tagline: "UI/UX lead on a banking platform, team of eleven.",
-    intro:
-      "A full mock banking app with transfers, transaction search, loans and an admin console. I led UI/UX and owned the system that held eleven developers’ screens together.",
-    year: "2025",
-    role: "UI/UX lead, frontend",
-    timeline: "3 weeks",
-    team: "Team of 11",
-    kind: "Team",
-    cover: "/Novabank-picture.jpg",
-    gallery: ["/novabank-1.jpg", "/novabank-2.jpg", "/novabank-3.jpg"],
-    stack: ["React", "TypeScript", "Tailwind", "Figma", "Java", "GCP"],
-    links: [
-      {
-        label: "Watch demo",
-        href: "https://www.youtube.com/live/nE_16cvehM0?si=8DhKgkxW_ktEbOvX&t=1415",
-        variant: "primary",
-      },
-      {
-        label: "View repo",
-        href: "https://github.com/salt-community/jfs-2025-03-31-novabank-ab",
-      },
-    ],
-    context:
-      "A banking app has to read as trustworthy, and eleven people building screens in parallel is the fastest way to lose that.",
-    approach:
-      "A small palette, one type scale and generous spacing, documented in Figma before anyone started building. Trust came from taking things out.",
-    did: [
-      "Owned the design language, components and layouts",
-      "Built the landing page and sign-in flow",
-      "Surveyed users on the transfer flow before building it",
-    ],
-  },
-  {
     slug: "skinsmart",
     title: "SkinSmart",
     tagline: "A live commercial site for a CS2 trading business.",
@@ -335,6 +300,41 @@ export const projects: Project[] = [
       "Design, build, logo and animation",
       "Domain and deployment on Vercel",
       "Performance, SEO and accessibility tuning",
+    ],
+  },
+  {
+    slug: "novabank",
+    title: "Nova Bank",
+    tagline: "UI/UX lead on a banking platform, team of eleven.",
+    intro:
+      "A full mock banking app with transfers, transaction search, loans and an admin console. I led UI/UX and owned the system that held eleven developers’ screens together.",
+    year: "2025",
+    role: "UI/UX lead, frontend",
+    timeline: "3 weeks",
+    team: "Team of 11",
+    kind: "Team",
+    cover: "/Novabank-picture.jpg",
+    gallery: ["/novabank-1.jpg", "/novabank-2.jpg", "/novabank-3.jpg"],
+    stack: ["React", "TypeScript", "Tailwind", "Figma", "Java", "GCP"],
+    links: [
+      {
+        label: "Watch demo",
+        href: "https://www.youtube.com/live/nE_16cvehM0?si=8DhKgkxW_ktEbOvX&t=1415",
+        variant: "primary",
+      },
+      {
+        label: "View repo",
+        href: "https://github.com/salt-community/jfs-2025-03-31-novabank-ab",
+      },
+    ],
+    context:
+      "A banking app has to read as trustworthy, and eleven people building screens in parallel is the fastest way to lose that.",
+    approach:
+      "A small palette, one type scale and generous spacing, documented in Figma before anyone started building. Trust came from taking things out.",
+    did: [
+      "Owned the design language, components and layouts",
+      "Built the landing page and sign-in flow",
+      "Surveyed users on the transfer flow before building it",
     ],
   },
   {

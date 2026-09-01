@@ -12,13 +12,16 @@ import type { Project } from "@/data/projects";
  *
  * Two things have to agree or the layout looks broken:
  *
- *  - The pinned box is `top-0 h-svh`, not `top-20 h-[calc(100svh-5rem)]`.
- *    The latter centres the image at (viewport + 80) / 2 while each panel
- *    centres its text at viewport / 2, so the two sat 40px apart. The image
- *    is shorter than the viewport, so it never reaches the fixed header.
+ *  - The pinned image's centre and each panel's text centre have to land on
+ *    the same line, and that fixes the lead-in: the list needs
+ *    `pin centre - panel/2` of padding before the first panel, or the first
+ *    project is already past centre when the column pins. Centring the image
+ *    in the full viewport therefore cost ~50vh of empty scroll at each end.
+ *    Pinning at `top-20 h-[70svh]` puts the centre at `5rem + 35vh`, which
+ *    brings the lead-in and the tail down to 9vh each.
  *
- *  - Panels are 58vh, not 76vh. Taller panels put half a panel of dead space
- *    between the section heading and the first project.
+ *  - So: pt/pb = 35vh - panel/2 = 9vh with 52vh panels. Change any one of
+ *    the three and the other two have to move with it.
  */
 export default function WorkShowcase({ projects }: { projects: Project[] }) {
   const [active, setActive] = useState(0);
@@ -66,8 +69,11 @@ export default function WorkShowcase({ projects }: { projects: Project[] }) {
     <>
       <div data-showcase className="hidden gap-16 lg:grid lg:grid-cols-[1.05fr_1fr]">
         <div className="relative">
-          <div className="sticky top-0 flex h-svh items-center">
-            <div className="relative aspect-[16/11] w-full overflow-hidden rounded-lg border border-line bg-surface-2">
+          <div className="sticky top-20 flex h-[70svh] items-center">
+            {/* max-h matches the pinned box: on a wide, short viewport the
+                cover would otherwise be taller than the box and slide up
+                under the header. */}
+            <div className="relative aspect-[16/11] max-h-[70svh] w-full overflow-hidden rounded-lg border border-line bg-surface-2">
               {projects.map((project, i) => (
                 <img
                   key={project.slug}
@@ -97,14 +103,14 @@ export default function WorkShowcase({ projects }: { projects: Project[] }) {
           </div>
         </div>
 
-        <ul className="pt-[22vh] pb-[26vh]">
+        <ul className="pt-[9vh] pb-[9vh]">
           {projects.map((project, i) => (
             <li
               key={project.slug}
               ref={(node) => {
                 panels.current[i] = node;
               }}
-              className="flex min-h-[58vh] flex-col justify-center"
+              className="flex min-h-[52vh] flex-col justify-center"
             >
               <Link
                 to="/work/$slug"

@@ -72,10 +72,12 @@ function About() {
         </Reveal>
       </header>
 
-      <section className="shell pb-16">
+      <section className="shell pb-12">
         <SectionRule label="Experience" />
 
-        <ol className="mt-2 [&>li:last-child>article]:border-0">
+        {/* The final entry keeps its border off and drops its bottom padding
+            too - with no rule beneath it, that padding was just a void. */}
+        <ol className="mt-2 [&>li:last-child>article]:border-0 [&>li:last-child>article]:pb-0">
           {experience.map((role, i) => (
             <Reveal
               as="li"
@@ -129,7 +131,7 @@ function About() {
         </ol>
       </section>
 
-      <section className="shell pb-16">
+      <section className="shell pb-12">
         <SectionRule label="Languages" />
         <Reveal>
           <ul className="mt-2 flex flex-wrap gap-x-12 gap-y-4 pt-8">
